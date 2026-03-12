@@ -6,7 +6,7 @@
 
 An open-source [Claude Code](https://docs.anthropic.com/en/docs/claude-code) workflow that turns your terminal into a full-service applied econometrics research assistant — from literature review to journal submission.
 
-**Live guide:** [hsantanna88.github.io/clo-author](https://hsantanna88.github.io/clo-author/)
+**Live guide:** [hugosantanna.github.io/clo-author](https://hugosantanna.github.io/clo-author/)
 <br>**Built on:** [Pedro Sant'Anna's claude-code-my-workflow](https://github.com/pedrohcgs/claude-code-my-workflow)
 
 ---
@@ -15,7 +15,7 @@ An open-source [Claude Code](https://docs.anthropic.com/en/docs/claude-code) wor
 
 ```bash
 # 1. Fork and clone
-gh repo fork hsantanna88/clo-author --clone
+gh repo fork hugosantanna/clo-author --clone
 cd clo-author
 
 # 2. Open Claude Code

@@ -28,7 +28,7 @@ Approved plan: `quality_reports/plans/` (saved in prior session). Split into:
 5. Updated `guide/custom.scss` — replaced WIP notice with navbar styling
 6. Deleted `guide/workflow-guide.qmd`, `docs/index.html`, `docs/workflow-guide.html`
 7. Ran `quarto render` — all 3 pages rendered successfully
-8. Updated `README.md` guide link → `hsantanna88.github.io/clo-author`
+8. Updated `README.md` guide link → `hugosantanna.github.io/clo-author`
 9. Updated `CLAUDE.md` comment reference
 10. Rewrote `hsantanna-site-local/clo-author.md` as redirect page
 11. Removed sidebar nav block from `hsantanna-site-local/_data/navigation.yml`
