@@ -123,11 +123,13 @@ This table reports results from panel regressions of monthly position changes ($
 \clearpage
 \begin{table}[htbp]
 \caption{\textbf{Securities Lending and Mandatory Short Position Disclosure} \endgraf {\footnotesize
-This table reports results from panel regressions of monthly position changes on lagged lending interacted with a lead mandatory disclosure indicator. Columns~(1)--(7) use active funds; column~(8) reports the passive fund placebo. Standard errors are double-clustered by fund and time. $t$-statistics are reported in parentheses. *, **, *** denote significance at the 10\%, 5\%, and 1\% levels. Variable definitions and detailed notes appear below the table.}}
+This table reports panel regressions of $PosChange_{i,j,t}$, the monthly percentage change in fund $j$'s position in stock $i$, estimated on the \textit{disclosure sample} --- observations within $\pm$3 months of a first-time public short position disclosure for stocks ever receiving such a disclosure ($\mathit{ever\_LSP}=1$). $\mathit{OnLoan}_{i,j,t-1}$ is the dollar value of shares lent by fund $j$ in stock $i$ at month $t-1$ scaled by stock $i$'s market capitalization, standardized to mean zero and unit standard deviation. $\mathit{Disclosure}_{i,t+1}$ equals one if stock $i$ receives a \textit{new} mandatory public short position disclosure in month $t+1$ (no prior disclosure in the preceding six months). Columns~(1)--(7) estimate on actively managed funds; column~(8) is the passive fund placebo. Columns~(1)--(3) and (5)--(7) include separate security, fund, and time fixed effects; columns~(4) and (8) use the fully saturated specification (security$\times$time, fund$\times$time, and fund$\times$security). Controls include lagged Amihud illiquidity rank and lagged position weight.}}
 \label{table_disclosure}
 \begin{center}
 \resizebox{\textwidth}{!}{\input{../Tables/table5_disclosure}}
 \end{center}
+\par\smallskip
+{\footnotesize\noindent\textit{Notes:} Standard errors are double-clustered by fund and time. $t$-statistics in parentheses. *, **, *** denote significance at the 10\%, 5\%, and 1\% levels.}
 \end{table}
 
 % --- Table 6: Passive Fund Lending ---
@@ -156,22 +158,26 @@ This table reports results including leads, contemporaneous, and lagged disclosu
 \clearpage
 \begin{table}[htbp]
 \caption{\textbf{Information Channels within Fund Families} \endgraf {\footnotesize
-This table decomposes lending into same-manager, cross-manager, and family-level channels and reports their interactions with the mandatory disclosure indicator. Standard errors are double-clustered by fund and time. $t$-statistics are reported in parentheses. *, **, *** denote significance at the 10\%, 5\%, and 1\% levels. Variable definitions and detailed notes appear below the table.}}
+This table reports panel regressions of $PosChange_{i,j,t}$ on lending-based information channels decomposed within fund families, using the disclosure sample of actively managed funds. Panel~A indicates which channel variables are included; Panel~B reports their interactions with $\mathit{Disclosure}_{i,t+1}$. Lending is decomposed into four channels: $\mathit{OnLoan}_{i,t-1}$ (market-wide aggregate); $\mathit{OnLoan}_{i,m,j,t-1}$ (stock $i$ lent by other funds sharing fund $j$'s portfolio manager); $\mathit{OnLoan}_{i,m,k\neq j,t-1}$ (stock $i$ lent by family funds under a different manager); $\mathit{OnLoan}_{i,f,k\neq m,t-1}$ (stock $i$ lent by family funds outside the manager's group entirely). $\mathit{Disclosure}_{i,t+1}$ equals one if stock $i$ receives a new mandatory public short position disclosure in month $t+1$. All lending variables are standardized. Columns~(1)--(4) include separate security, fund, and time fixed effects; columns~(5)--(6) use the fully saturated specification (security$\times$time, fund$\times$time, and fund$\times$security). Controls include lagged Amihud illiquidity rank and lagged position weight.}}
 \label{table_family}
 \begin{center}
 \resizebox{\textwidth}{!}{\input{../Tables/table8_family_channels}}
 \end{center}
+\par\smallskip
+{\footnotesize\noindent\textit{Notes:} Standard errors are double-clustered by fund and time. $t$-statistics in parentheses. *, **, *** denote significance at the 10\%, 5\%, and 1\% levels.}
 \end{table}
 
 % --- Table 9: Market Structure ---
 \clearpage
 \begin{table}[htbp]
 \caption{\textbf{Market Structure and Information Acquisition} \endgraf {\footnotesize
-This table reports results examining how the family-lending disclosure effect varies with lending market concentration. Column~(1) is the baseline. Columns~(2)--(3) interact with stock-level HHI; columns~(4)--(5) with inverse active agents; columns~(6)--(7) with family HHI; columns~(8)--(9) with inverse stocks held; columns~(10)--(11) with inverse stocks lent. All specifications include security$\times$time, fund$\times$time, and fund$\times$security fixed effects. Standard errors are double-clustered by fund and time. $t$-statistics are reported in parentheses. *, **, *** denote significance at the 10\%, 5\%, and 1\% levels. Variable definitions and detailed notes appear below the table.}}
+This table reports panel regressions of $PosChange_{i,j,t}$ on $\mathit{OnLoan}_{i,f,t-1}$ (aggregate family lending of stock $i$ scaled by market capitalization, standardized) and its interactions with lending market concentration measures, using the disclosure sample of actively managed funds. $\mathit{Disclosure}_{i,t+1}$ equals one if stock $i$ receives a new mandatory public disclosure in month $t+1$. Panel~A reports the baseline main effects. Panel~B interacts with stock-level concentration: $\mathit{HHI}^{\mathit{stock}}_{i,t-1}$ is the Herfindahl--Hirschman index of lending concentration across families for stock $i$; $1/\mathit{ActiveAgents}_{i,t-1}$ is the inverse number of active lending agents. Panel~C interacts with family-level concentration: $\mathit{HHI}^{\mathit{family}}_{f,t-1}$ is the HHI of family $f$'s lending portfolio across stocks; $1/\mathit{StocksHeld}_{f,t-1}$ is the inverse number of stocks held by family $f$ ($\times 10^4$); $1/\mathit{StocksLent}_{f,t-1}$ is the inverse number of stocks lent by family $f$ ($\times 10^4$). All concentration measures are standardized. All specifications include security$\times$time, fund$\times$time, and fund$\times$security fixed effects. Controls include lagged Amihud illiquidity rank and lagged position weight.}}
 \label{table_market_structure}
 \begin{center}
 \resizebox{\textwidth}{!}{\input{../Tables/table9_market_structure}}
 \end{center}
+\par\smallskip
+{\footnotesize\noindent\textit{Notes:} Standard errors are double-clustered by fund and time. $t$-statistics in parentheses. *, **, *** denote significance at the 10\%, 5\%, and 1\% levels.}
 \end{table}
 
 %----------------------------------------------------------------------

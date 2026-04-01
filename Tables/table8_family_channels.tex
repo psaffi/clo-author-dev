@@ -1,4 +1,4 @@
-{\footnotesize
+{\small
 \begin{tabular}{l*{6}{c}}
 \toprule
  & \multicolumn{4}{c}{Security + Fund + Time FE} & \multicolumn{2}{c}{Saturated FE} \\
@@ -29,8 +29,4 @@ SE Clustering & Fund, Time & Fund, Time & Fund, Time & Fund, Time & Fund, Time &
 $N$ & 41,145 & 41,145 & 41,145 & 41,145 & 39,675 & 39,675 \\
 \bottomrule
 \end{tabular}
-}
-\par\smallskip
-{\footnotesize
-\textit{Notes:} The table reports results from panel regressions of $PosChange_{i,j,t}$, the monthly percentage change in fund $j$'s position in stock $i$, examining how lending-based information flows within fund families. The sample is restricted to actively managed funds in the disclosure sample. Lending activity is decomposed into four channels: $\mathit{OnLoan}_{i,t-1}$ is the market-wide aggregate lending of stock $i$; $\mathit{OnLoan}_{i,m,j,t-1}$ is lending of stock $i$ by other funds managed by the \textit{same} portfolio manager as fund $j$; $\mathit{OnLoan}_{i,m,k\neq j,t-1}$ is lending by funds in the same family managed by a \textit{different} portfolio manager; $\mathit{OnLoan}_{i,f,k\neq m,t-1}$ is lending by other funds in the family outside the manager's group. All lending variables are in dollar value divided by market capitalization and standardized. Panel~A indicates which lending variables are included in each specification. Panel~B reports interactions of each lending variable with $\mathit{Disclosure}_{i,t+1}$, equal to one if stock $i$ has a new mandatory public short position disclosure in month $t+1$. Columns~(1)--(4) include separate security, fund, and time fixed effects; columns~(5)--(6) include the full saturated fixed effects. Controls include lagged Amihud illiquidity rank and lagged position weight. Standard errors are double-clustered by fund and time. \textit{t}-statistics in parentheses. *, **, *** denote significance at the 10\%, 5\%, and 1\% levels.
 }

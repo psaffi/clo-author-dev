@@ -1,4 +1,4 @@
-{\footnotesize
+{\small
 \begin{tabular}{l*{11}{c}}
 \toprule
  & (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) & (9) & (10) & (11) \\
@@ -12,29 +12,29 @@ $\mathit{OnLoan}_{i,f,t-1} \times \mathit{Disclosure}_{i,t+1}$ & $-$0.8633$^{**}
 \multicolumn{12}{l}{\textit{Panel B: Interactions with stock-level concentration}} \\[0.3em]
 $\mathit{OnLoan}_{i,f,t-1} \times \mathit{HHI}^{\mathit{stock}}_{i,t-1}$ & & $-$0.2148 & & & & & & & & & \\
  & & ($-$1.18) & & & & & & & & & \\[0.3em]
-$\mathit{OnLoan}_{i,f,t-1} \times \mathit{HHI}^{\mathit{stock}}_{i,t-1}$ & & & & & & & & & & & \\
+$\mathit{OnLoan}_{i,f,t-1} \times \mathit{HHI}^{\mathit{stock}}_{i,t-1}$%
 $\quad \times\; \mathit{Disclosure}_{i,t+1}$ & & & $-$1.3854$^{*}$ & & & & & & & & \\
  & & & ($-$1.80) & & & & & & & & \\[0.3em]
 $\mathit{OnLoan}_{i,f,t-1} \times 1/\mathit{ActiveAgents}_{i,t-1}$ & & & & $-$1.5832$^{*}$ & & & & & & & \\
  & & & & ($-$1.75) & & & & & & & \\[0.3em]
-$\mathit{OnLoan}_{i,f,t-1} \times 1/\mathit{ActiveAgents}_{i,t-1}$ & & & & & & & & & & & \\
+$\mathit{OnLoan}_{i,f,t-1} \times 1/\mathit{ActiveAgents}_{i,t-1}$%
 $\quad \times\; \mathit{Disclosure}_{i,t+1}$ & & & & & $-$9.2142$^{**}$ & & & & & & \\
  & & & & & ($-$2.41) & & & & & & \\[0.3em]
 \midrule
 \multicolumn{12}{l}{\textit{Panel C: Interactions with family-level concentration}} \\[0.3em]
 $\mathit{OnLoan}_{i,f,t-1} \times \mathit{HHI}^{\mathit{family}}_{f,t-1}$ & & & & & & $-$0.1973 & & & & & \\
  & & & & & & ($-$1.42) & & & & & \\[0.3em]
-$\mathit{OnLoan}_{i,f,t-1} \times \mathit{HHI}^{\mathit{family}}_{f,t-1}$ & & & & & & & & & & & \\
+$\mathit{OnLoan}_{i,f,t-1} \times \mathit{HHI}^{\mathit{family}}_{f,t-1}$%
 $\quad \times\; \mathit{Disclosure}_{i,t+1}$ & & & & & & & $-$3.0048$^{*}$ & & & & \\
  & & & & & & & ($-$1.94) & & & & \\[0.3em]
 $\mathit{OnLoan}_{i,f,t-1} \times 1/\mathit{StocksHeld}_{f,t-1}$ & & & & & & & & $-$0.5812$^{*}$ & & & \\
  & & & & & & & & ($-$1.68) & & & \\[0.3em]
-$\mathit{OnLoan}_{i,f,t-1} \times 1/\mathit{StocksHeld}_{f,t-1}$ & & & & & & & & & & & \\
+$\mathit{OnLoan}_{i,f,t-1} \times 1/\mathit{StocksHeld}_{f,t-1}$%
 $\quad \times\; \mathit{Disclosure}_{i,t+1}$ & & & & & & & & & $-$10.4297$^{*}$ & & \\
  & & & & & & & & & ($-$1.72) & & \\[0.3em]
 $\mathit{OnLoan}_{i,f,t-1} \times 1/\mathit{StocksLent}_{f,t-1}$ & & & & & & & & & & $-$1.0463$^{**}$ & \\
  & & & & & & & & & & ($-$2.31) & \\[0.3em]
-$\mathit{OnLoan}_{i,f,t-1} \times 1/\mathit{StocksLent}_{f,t-1}$ & & & & & & & & & & & \\
+$\mathit{OnLoan}_{i,f,t-1} \times 1/\mathit{StocksLent}_{f,t-1}$%
 $\quad \times\; \mathit{Disclosure}_{i,t+1}$ & & & & & & & & & & & $-$8.1425$^{***}$ \\
  & & & & & & & & & & & ($-$3.96) \\
 \midrule
@@ -46,8 +46,4 @@ Fund $\times$ Security FE & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes & Yes 
 $N$ & 39,109 & 39,003 & 39,003 & 39,003 & 39,003 & 39,003 & 39,003 & 39,003 & 39,003 & 39,003 & 39,003 \\
 \bottomrule
 \end{tabular}
-}
-\par\smallskip
-{\footnotesize
-\textit{Notes:} The table reports results from panel regressions of $PosChange_{i,j,t}$, the monthly percentage change in fund $j$'s position in stock $i$, on family-level securities lending interacted with measures of lending market concentration. The sample is restricted to actively managed funds in the disclosure sample (within $\pm$3 months of a first-time large short position disclosure) for stocks that were ever publicly disclosed. $\mathit{OnLoan}_{i,f,t-1}$ is the aggregate dollar value of stock $i$ lent by family $f$ in month $t-1$ divided by the market capitalization of stock $i$, standardized to mean zero and unit standard deviation. $\mathit{Disclosure}_{i,t+1}$ equals one if stock $i$ has a new public short position disclosure in month $t+1$ (i.e., no prior disclosure in the preceding six months). All concentration measures are standardized: $\mathit{HHI}^{\mathit{stock}}_{i,t-1}$ is the Herfindahl--Hirschman index of lending concentration across families for stock $i$; $1/\mathit{ActiveAgents}_{i,t-1}$ is the inverse of the number of active lending agents for stock $i$; $\mathit{HHI}^{\mathit{family}}_{f,t-1}$ is the HHI of family $f$'s lending portfolio across stocks; $1/\mathit{StocksHeld}_{f,t-1}$ is the inverse of the number of stocks held by family $f$ ($\times 10^4$); $1/\mathit{StocksLent}_{f,t-1}$ is the inverse of the number of stocks lent by family $f$ ($\times 10^4$). Controls include lagged Amihud illiquidity rank and lagged position weight. All specifications include security$\times$time, fund$\times$time, and fund$\times$security fixed effects, with standard errors double-clustered by fund and time. \textit{t}-statistics in parentheses. *, **, *** denote significance at the 10\%, 5\%, and 1\% levels.
 }
