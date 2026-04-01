@@ -1,10 +1,10 @@
 % Appendix A: Variable Definitions
 
-\begin{table}[htbp]
+\begin{table}[p]
 \caption{\textbf{Variable Definitions}}
 \label{table_variable_definitions}
 \begin{center}
-{\small
+{\footnotesize
 \begin{tabular}{p{4.5cm}p{10cm}}
 \toprule
 \textbf{Variable} & \textbf{Definition} \\
@@ -16,13 +16,14 @@ $Position\ Weight_{i,j,t}$ & Market value of holding $i$ by fund $j$ at time $t$
 $D(Position\ Exit)_{i,j,t}$ & Indicator equal to one if fund $j$ closes its position in stock $i$ in month $t$. \\[0.3em]
 $D(On\ Loan)_{i,j,t}$ & Indicator equal to one if fund $j$ has lent (part of) its position in stock $i$ in month $t$. \\[0.3em]
 $sh\_sec\_lend_{i,j,t}$ & Fraction of the position in stock $i$ lent by fund $j$ in month $t$. \\[0.3em]
+$OnLoan_{i,j,t}$ & Dollar value of stock $i$ lent by fund $j$ in month $t$ divided by stock $i$'s total market capitalization. This is the fund-security-level lending variable used in all regression specifications; standardized to mean zero and unit standard deviation in estimation. Related to $sh\_sec\_lend_{i,j,t}$ by the fund's portfolio weight in stock $i$. \\[0.3em]
 \midrule
 \multicolumn{2}{l}{\textit{Panel B: Stock Variables}} \\
 \midrule
 $OnLoan_{i,t}$ & Value of stock $i$ on loan divided by total market capitalization. Source: IHS Markit. \\[0.3em]
 $Lending\ Supply_{i,t}$ & Value of stock $i$ available for lending divided by total market capitalization. Source: IHS Markit. \\[0.3em]
 $Short\ Fee_{i,t}$ & Annualized fee (in basis points) for borrowing stock $i$. Source: IHS Markit. \\[0.3em]
-$Disclosure_{i,t}$ & Indicator equal to one if a mandatory public disclosure of a net short position exceeding 0.5\% of shares outstanding is filed for stock $i$ at time $t$. \\[0.3em]
+$Disclosure_{i,t}$ & Indicator equal to one if a mandatory public disclosure of a net short position exceeding 0.5\% of issued share capital is filed for stock $i$ at time $t$ under Regulation (EU) No 236/2012. In regressions, $Disclosure_{i,t+1}$ equals one only for \textit{new} disclosures (no prior disclosure in the preceding six months). \\[0.3em]
 \midrule
 \multicolumn{2}{l}{\textit{Panel C: Fund Variables}} \\
 \midrule
