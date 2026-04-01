@@ -1,0 +1,131 @@
+{\centering
+\begin{table}[!ht]
+	\caption{\textbf{Descriptive Statistics: German Mutual Funds - Investment Focus} \endgraf {\footnotesize This table
+			reports descriptive statistics of the sample of German mutual funds used in the analysis. Data on fund portfolio holdings are from the Bundesbank's Investment Funds Statistics database. Other fund information is from Morningstar.}}
+	\label{table_desc_stats_investment}
+	\begin{center}
+		\par
+		%\begin{adjustbox}{width=\textwidth, keepaspectratio}
+			{\small
+				\begin{tabular}{lcc}
+					\toprule
+					%\multicolumn{3}{l}{\textbf{Panel A: German Mutual Funds - Investment Focus}} \\ \hline \noalign{\vskip 3mm}
+					\textit{Investment Focus} & \multicolumn{1}{c}{\textit{Number of Funds}} & \multicolumn{1}{c}{\textit{AUM (in billion EUR)}} \\
+					\midrule
+					Global & 92    & 63.78 \\
+					Europe & 135   & 38.37 \\
+					Germany & 58    & 49.40 \\
+					Other & 35    & 5.20 \\
+					\midrule
+					\textbf{ALL} & \textbf{320} & \textbf{156.75} \\
+					\bottomrule
+					
+				\end{tabular}
+			}
+		%\end{adjustbox}
+	\end{center}
+\end{table}
+}	
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\clearpage
+{\centering
+	\begin{table}[ht!]
+		\caption{\textbf{Descriptive Statistics: German Mutual Funds - Securities Lending Behavior} \endgraf {\footnotesize This table
+				reports descriptive statistics of the sample of German mutual funds used in the analysis. Data on fund portfolio holdings are from the Bundesbank's Investment Funds Statistics database. Other fund information is from Morningstar.}}
+		\label{table_desc_stats_seclending}
+		\begin{center}
+			\par
+			\begin{adjustbox}{width=\textwidth, keepaspectratio}
+			{\small
+	    \begin{tabular}{lcccccc}
+			\toprule
+			Panel A: Fund-Level Lending &   Obs    &  \multicolumn{2}{c}{\% of Funds Lending}          &       &       &  \\ \noalign{\vskip 1mm} \hline
+
+			All Funds & 320   & 32.81\% &       &       &       &  \\
+			Active Funds & 267   & 25.47\% &       &       &       &  \\
+			Passive Funds & 53    & 69.81\% &       &       &       &  \\ \hline
+			&       &       &       &       &       &  \\ \hline  \noalign{\vskip 1mm}
+			Panel B: Portfolio-Level and Position-Level Lending &   Obs   &   Mean    &   Median    &   St. Dev.    &   25th Pct.    &  75th Pct. \\ \noalign{\vskip 1mm} \hline \noalign{\vskip 1mm}
+			\% of AUM Lent & 2,563  & 3.80\% & 2.43\% & 4.50\% & 0.94\%  & 5.12\% \\
+			\% of Position MV Lent & 21,572 & 55.39\% & 57.44\% & 36.20\% & 17.64\%  & 92.77\% \\
+			\bottomrule
+			\end{tabular}
+			}
+			\end{adjustbox}
+		\end{center}
+	\end{table}
+}	
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\clearpage
+{\centering
+\begin{table}[ht!]
+\caption{\textbf{Descriptive Statistics} \endgraf {\footnotesize This table
+reports monthly descriptive statistics of the main variables used in the
+analysis. Data on fund portfolio holdings and equity lending activities is from the Bundesbank's Investment Funds Statistics database. Stock data is from Datastream. Markit provides equity market lending data. Fund information is from Morningstar. The variable definitions are in Appendix A.}}
+\label{table_desc_stats}
+\begin{center}
+\par
+\begin{adjustbox}{width=\textwidth, keepaspectratio}
+{\small
+\begin{tabular}{lcccccc}
+\toprule
+\textbf{Variable} & \textbf{Mean} & \textbf{Median} & \textbf{St. Dev.} & \textbf{25th Pct.} & \textbf{75th Pct.} & \textbf{Obs.} \\ \hline \noalign{\vskip 2mm}
+
+\multicolumn{7}{l}{\textbf{Panel A: Portfolio Variables}} \\ \hline \noalign{\vskip 1mm}
+    \textit{Position Change (in \%)} & -2.97 & 0.00 & 25.16 & 0.00 & 0.00 & 1,136,013 \\
+    \textit{Position Weight (in \%)} & 1.10 & 0.63 & 1.40 & 0.23 & 1.45 & 1,181,876 \\
+    \textit{D(Position Exit)} & 0.04 & - & 0.19 & - & - & 1,182,413 \\ 
+    %\textit{OnLoan\textsubscript{i,j,t} (\% of Market Cap.)}  & 0.00 & 0.00 & 0.04 & - & - & 1,136,954 \\ 
+    \textit{D(On Loan)} & 0.02 & - & 0.14 & - & - & 1,182,413 \\
+    \textit{D(On Loan (past 12 months))} & 0.05 & - & 0.19 & - & - & 1,182,413 \\  \hline \noalign{\vskip 4mm}
+    
+
+\multicolumn{7}{l}{\textbf{Panel B: Stock Variables}} \\ \hline  \noalign{\vskip 1mm}   
+    \textit{On Loan (\% of Market Cap.)} & 2.52  &  0.38  & 3.94  & 1.06  & 2.86 & 191,624 \\
+    \textit{Lending Supply (\% of Market Cap.)} & 17.89 &  9.72  & 10.14 & 17.21 & 25.34 & 191,547 \\
+    \textit{Short Fee (bps p.a.)} & 75.98 & 11.68 &  265.53 & 19.09 & 28.95  & 185,704 \\
+    
+    \textit{Return (in \%)} & 0.48  & 0.38  &  9.25 &  -4.40 & 5.27 & 195,588 \\
+    \textit{Carhart four-factor Alpha (in \%)} & -0.02 & -0.08  &  8.84 & -4.28  & 4.14 & 184,481 \\
+    %\texit{Amihud Illiquidity Ratio (x10$^6$}  & 18.21 & 115.57 & 0.02  & 0.08  & 0.54 & 161,865 //
+    \textit{D(Disclosed Short Position)} & 0.20 & - & 0.40 &    -   & -  & 196,279 \\ \noalign{\vskip 4mm}
+    %\textit{#(Active Funds Exiting} & 0.32 & - & 0.80 &    -   & -  & 196,279 \\ \noalign{\vskip 4mm}
+
+
+\multicolumn{7}{l}{\textbf{Panel C: Fund Variables}} \\ \hline  \noalign{\vskip 1mm}
+    \textit{D(Active Fund)} & 0.85 & - & 0.36 & - & - & 13,029 \\
+    \textit{D(Fund Lends)} & 0.20 & - & 0.40 & - & - & 13,029 \\
+    \textit{Gross Return (in \%)} & 0.41  & 0.67 & 3.99  & -1.91   & 3.04 & 12,897 \\
+    \textit{Net Return (in \%)}  & 0.29  & 0.56 & 3.98  & -2.02 & 2.91 & 12,897 \\
+    \textit{Gross Alpha Carhart four-factor) (in \%)} & -0.02 & 0.00 & 1.60  & -0.87 & 0.84 & 12,858 \\
+    \textit{Net Alpha (Carhart four-factor) (in \%)} & -0.13 & -0.11 & 1.60  & -0.98 & 0.73 & 12,858 \\
+    \textit{Fund R$^2$ (in \%)} & 86.49 & 88.96   & 10.49  &   82.75 & 93.88 & 12,858 \\
+    \textit{Fund Costs (excl. Transaction Fees) (in \%)} &  1.36 & 1.46  & 0.69  & 0.96 & 1.72 & 12,897 \\
+    \textit{Net Asset Value (in billion \euro)}  & 0.56  & 0.10  & 1.58  & 0.03   & 0.34 & 13,029 \\
+    \textit{Fund Flows (in \% of AUM)}  & 0.59 & -0.05  & 28.85 & -0.62 & 0.50 & 13,014 \\
+    \textit{Fund Age (in years)} &  18.61 & 16.25 & 13.08 & 9.75 & 21.58 & 13,029 \\
+    \textit{Fund Turnover (in \%)} & 4.48    & 1.94   & 8.21  & 0.08  & 5.44  & 13,018 \\ \noalign{\vskip 4mm}
+
+    
+\multicolumn{7}{l}{\textbf{Panel D: Fund Family Variables}} \\ \hline  \noalign{\vskip 1mm}
+    \textit{D(Family Lends)} & 0.17 & - & 0.37 & - & - & 1,545 \\
+    \textit{Family Net Asset Value (in billion \euro)} & 45.73 & 12.38 & 71.97 & 3.47  & 49.89 & 1,545 \\    
+    
+    \bottomrule
+
+\end{tabular}
+}
+\end{adjustbox}
+\end{center}
+\end{table}
+}

@@ -5,8 +5,8 @@
      Keep this file under ~150 lines — Claude loads it every session.
      See the guide at https://hugosantanna.github.io/clo-author/ for full documentation. -->
 
-**Project:** [YOUR PROJECT NAME]
-**Institution:** [YOUR INSTITUTION]
+**Project:** Securities Lending and Information Acquisition 
+**Institution:** CUNEF Universidad
 **Branch:** main
 
 ---
@@ -109,7 +109,7 @@ See `quality.md` for weighted aggregation formula.
 ---
 
 <!-- CUSTOMIZE: Replace the example entries below with your own
-     Beamer environments for talks. -->
+     Beamer environments for talks. 
 
 ## Beamer Custom Environments (Talks)
 
@@ -117,7 +117,7 @@ See `quality.md` for weighted aggregation formula.
 |-------------------|---------------|----------------|
 | `[your-env]`      | [Description] | [When to use]  |
 
----
+--- -->
 
 ## Current Project State
 
