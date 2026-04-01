@@ -1,100 +1,108 @@
 # Domain Profile
 
-<!--
-HOW TO USE: Fill this in manually OR let /discover (interactive interview) generate it.
-All agents read this file to calibrate their field-specific behavior.
-Delete sections that don't apply. Add sections specific to your field.
--->
-
 ## Field
 
-**Primary:** [e.g., Health Economics, Labor Economics, Development, IO, Public Finance]
-**Adjacent subfields:** [e.g., Labor, Public, IO — fields whose methods and journals overlap]
+**Primary:** Financial Economics — Market Microstructure, Securities Lending, Institutional Investors
+**Adjacent subfields:** Asset Pricing, Corporate Finance, Information Economics
 
 ---
 
 ## Target Journals (ranked by tier)
 
-<!-- The Orchestrator uses this for journal selection. The Librarian prioritizes these in searches. -->
-
 | Tier | Journals |
 |------|----------|
-| Top-5 | AER, Econometrica, JPE, QJE, REStud |
-| Top field | [e.g., JHE, RAND JE, AEJ:EP, AEJ:Applied] |
-| Strong field | [e.g., Health Affairs, AJHE, JPubE, JHR] |
-| Specialty | [e.g., Medical Care, Health Services Research] |
+| Top-5 | JF, JFE, RFS, AER, Econometrica |
+| Top field | JFQA, Management Science, RCFS |
+| Strong field | Review of Finance, JBF, JFAI |
+| Specialty | Journal of Banking & Finance, JFM |
 
 ---
 
 ## Common Data Sources
 
-<!-- The Explorer prioritizes these. The explorer-critic knows their quirks. -->
-
 | Dataset | Type | Access | Notes |
 |---------|------|--------|-------|
-| [e.g., CPS] | [survey/admin/panel] | [public/restricted] | [key strengths and limitations] |
+| Bundesbank IFS | Admin/regulatory panel | Restricted (on-site) | Security-level fund holdings and lending positions, monthly |
+| IHS Markit (now S&P) | Securities lending data | Commercial | Stock-level lending supply, demand, fees, utilization |
+| Datastream | Stock prices/returns | Commercial | Standard stock-level data for developed markets |
+| Morningstar | Fund characteristics | Commercial | Fund style, AUM, flows, expenses, age, manager info |
+| CRSP MF Database | US fund data | Academic | Standard for US mutual fund research |
+| Thomson Reuters 13F | US institutional holdings | Public (SEC) | Quarterly holdings for US institutions |
+| Kenneth French Library | Risk factors | Public | Regional Fama-French and Carhart factors |
 
 ---
 
 ## Common Identification Strategies
 
-<!-- The Strategist considers these first. The strategist-critic knows field-specific threats. -->
-
 | Strategy | Typical Application | Key Assumption to Defend |
 |----------|-------------------|------------------------|
-| [e.g., State-level DiD] | [Policy variation across states] | [Parallel trends in outcomes across treated/control states] |
+| Within-fund variation (saturated FE) | Security x Time + Fund x Time + Fund x Security FE | Absorbs all time-varying fund and stock heterogeneity; variation comes from within-fund-stock changes in lending |
+| Disclosure events as information shocks | Mandatory short position disclosure (EU regulation) as exogenous revelation of short-seller identity | Disclosure timing is regulatory, not strategic; funds do not anticipate specific disclosure events |
+| Passive fund lending as instrument | Passive fund lending as source of exogenous lending variation | Passive funds do not trade on lending information; lending driven by portfolio composition |
+| Within-family spillovers | Same-manager vs. cross-manager lending within fund family | Family organizational structure is pre-determined relative to lending decisions |
 
 ---
 
 ## Field Conventions
 
-<!-- The Coder and Writer follow these. The writer-critic checks for them. -->
-
-- [e.g., Binary outcomes → report LPM alongside logit/probit marginal effects]
-- [e.g., Cost outcomes → log transform or GLM (Gamma, log link)]
-- [e.g., Clustering at state level for state-level policy variation]
-- [e.g., Always discuss moral hazard / adverse selection implications]
-- [e.g., Welfare analysis expected in top-5 submissions]
+- Double-cluster standard errors by Fund and Time for panel regressions
+- Report t-statistics in parentheses (not standard errors) — field convention in finance
+- Use Carhart four-factor alpha (market, SMB, HML, UMD) as primary risk adjustment
+- Report economic magnitudes alongside statistical significance
+- Saturated fixed effects (three-way FE) as gold standard for within-variation identification
+- Active vs. passive fund distinction is standard in mutual fund literature
+- Securities lending variables: On Loan as % of market cap (stock level) or % of position (fund level)
+- Report Adjusted R-squared, not R-squared
 
 ---
 
 ## Notation Conventions
 
-<!-- The Writer and writer-critic enforce these. -->
-
 | Symbol | Meaning | Anti-pattern |
 |--------|---------|-------------|
-| [e.g., $Y_{it}$] | [Outcome for individual i at time t] | [Don't use $y$ without subscripts] |
+| $PosChange_{i,j,t}$ | Position change (%) of stock $i$ by fund $j$ in month $t$ | Don't use $\Delta h$ without subscripts |
+| $OnLoan_{i,j,t}$ | Share of position $i$ lent by fund $j$ at time $t$ | Don't use generic $L$ or $Lend$ |
+| $D(Lender)_{j,t}$ | Indicator: fund $j$ is lending at time $t$ | Don't use $I_{lend}$ |
+| $Disclosure_{i,t}$ | Indicator: stock $i$ has mandatory short disclosure at $t$ | Specify lead/lag: $Disclosure_{i,t+1}$ |
+| $sh\_sec\_lend_{i,j,t}$ | Fraction of position $i$ lent by fund $j$ at $t$ | Use consistent naming across tables |
 
 ---
 
 ## Seminal References
 
-<!-- The Librarian ensures these are cited when relevant. The strategist-critic knows their methods. -->
-
 | Paper | Why It Matters |
 |-------|---------------|
-| [e.g., Finkelstein et al. (2012)] | [Oregon HIE — gold standard for insurance effects] |
+| Duffie, Garleanu, Pedersen (2002) | Theoretical foundation: lending fees capitalize in stock prices |
+| Prado (2015, JFQA) | Institutions buy stocks in response to lending fee increases |
+| Evans, Ferreira, Prado (2017, RoF) | Lending funds underperform — fail to exploit borrowing demand signal |
+| Honkanen (2025, JFQA) | US evidence: active funds reduce positions in lent stocks; family spillovers |
+| Nurisso (2026, JFE) | Theory: learning by lending, commitment problem, passive lender advantage |
+| Palia, Sokolinski (2024, RoF) | Short sellers strategically borrow from passive investors |
+| Chague, Giovannetti, Herskovic (2025) | Brokers leak information about short sellers to clients |
+| Jones, Reed, Waller (2016, RFS) | Mandatory short disclosure reduces short selling and price informativeness |
+| Chen, Desai, Krishnamurthy (2013, JFQA) | Funds that short sell demonstrate stock-picking skill |
+| Saffi, Sigurdsson (2011, RFS) | Short-sale constraints and stock price informational efficiency |
 
 ---
 
 ## Field-Specific Referee Concerns
 
-<!-- The domain-referee and methods-referee watch for these. -->
-
-- [e.g., "Why not use the Oregon HIE?" — must address if studying insurance effects]
-- [e.g., "Selection into treatment" — always a concern in health care utilization studies]
-- [e.g., "Moral hazard vs adverse selection" — referees expect you to distinguish]
-- [e.g., "External validity" — Medicaid population ≠ general population]
+- "Is this just reverse causality — do funds sell first and then stop lending?" Must show lending precedes trading
+- "Why don't passive funds react?" Must demonstrate clean placebo
+- "Is this mechanical — fewer shares to lend after selling?" Must use intensive margin / saturated FE
+- "External validity — German market is small" Must compare to US evidence (Honkanen 2025)
+- "Family-level coordination vs. manager-level information" Must decompose channels (Table 8)
+- "Why not use stock-level lending data (Markit) instead?" Must justify fund-level data advantage
+- "Endogeneity of lending participation" Must address selection into lending
+- "Economic significance — how large are the position changes?" Must report magnitudes relative to mean
 
 ---
 
 ## Quality Tolerance Thresholds
 
-<!-- Customize for your domain's standards. Used by quality.md. -->
-
 | Quantity | Tolerance | Rationale |
 |----------|-----------|-----------|
-| Point estimates | [e.g., 1e-6] | [Numerical precision] |
-| Standard errors | [e.g., 1e-4] | [MC variability] |
-| Coverage rates | [e.g., ± 0.01] | [Simulation with B reps] |
+| Point estimates | 1e-4 | Coefficient precision in panel regressions |
+| t-statistics | 0.01 | Clustering affects inference |
+| Adjusted R-squared | 0.001 | Saturated FE models have high R-squared |
+| Observation counts | Exact match | Must match across specifications |

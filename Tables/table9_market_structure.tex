@@ -1,0 +1,33 @@
+{\small
+\begin{tabular}{l*{5}{c}}
+\toprule
+ & Baseline & \multicolumn{4}{c}{Triple Interactions} \\
+\cmidrule(lr){2-2} \cmidrule(lr){3-6}
+ & (1) & (2) & (3) & (4) & (5) \\
+\midrule
+$\mathit{OnLoan}_{i,j,t-1}$ & $-$0.4226$^{**}$ & & & & \\
+ & ($-$2.35) & & & & \\[0.3em]
+$\mathit{OnLoan} \times \mathit{Disclosure}_{i,t+1}$ & $-$0.8633$^{**}$ & & & & \\
+ & ($-$2.32) & & & & \\[0.3em]
+$\mathit{OnLoan} \times 1/\mathit{Active\ Agents}$ & & & & & \\
+$\quad \times\; \mathit{Disclosure}_{i,t+1}$ & & $-$9.2142$^{**}$ & & & \\
+ & & ($-$2.41) & & & \\[0.3em]
+$\mathit{OnLoan} \times \mathit{HHI}_{f}$ & & & & & \\
+$\quad \times\; \mathit{Disclosure}_{i,t+1}$ & & & $-$3.0048$^{*}$ & & \\
+ & & & ($-$1.94) & & \\[0.3em]
+$\mathit{OnLoan} \times 1/\mathit{Stocks}$ & & & & & \\
+$\quad \times\; \mathit{Disclosure}_{i,t+1}$ & & & & $-$10.4297$^{*}$ & \\
+ & & & & ($-$1.72) & \\[0.3em]
+$\mathit{OnLoan} \times 1/\mathit{Stocks\_OnLoan}$ & & & & & \\
+$\quad \times\; \mathit{Disclosure}_{i,t+1}$ & & & & & $-$8.1425$^{***}$ \\
+ & & & & & ($-$3.96) \\
+\midrule
+Controls & Yes & Yes & Yes & Yes & Yes \\
+Security $\times$ Time FE & Yes & Yes & Yes & Yes & Yes \\
+Fund $\times$ Time FE & Yes & Yes & Yes & Yes & Yes \\
+Fund $\times$ Security FE & Yes & Yes & Yes & Yes & Yes \\
+\midrule
+$N$ & 39,109 & 39,003 & 39,003 & 39,003 & 39,003 \\
+\bottomrule
+\end{tabular}
+}

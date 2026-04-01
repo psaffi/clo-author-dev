@@ -1,0 +1,33 @@
+{\small
+\begin{tabular}{l*{4}{c}}
+\toprule
+ & (1) & (2) & (3) & (4) \\
+\midrule
+$\mathit{OnLoan}_{i,j,t-1}$ & $-$0.2837$^{***}$ & $-$0.2820$^{***}$ & $-$0.1671 & $-$0.2110 \\
+ & ($-$2.85) & ($-$2.83) & ($-$1.31) & ($-$0.67) \\[0.3em]
+$\mathit{Disclosure}_{i,t+1}$ & & 0.4168 & 0.3928 & \\
+ & & (1.40) & (1.31) & \\[0.3em]
+$\mathit{Disclosure}_{i,t}$ & & 0.2958 & 0.3013 & \\
+ & & (1.05) & (1.07) & \\[0.3em]
+$\mathit{Disclosure}_{i,t-1}$ & & $-$0.0972 & $-$0.1020 & \\
+ & & ($-$0.29) & ($-$0.30) & \\[0.3em]
+$\mathit{OnLoan} \times \mathit{Disclosure}_{i,t+1}$ & & & $-$0.8224$^{**}$ & $-$0.8723$^{**}$ \\
+ & & & ($-$2.62) & ($-$2.27) \\[0.3em]
+$\mathit{OnLoan} \times \mathit{Disclosure}_{i,t}$ & & & 0.0353 & 0.3738 \\
+ & & & (0.08) & (0.55) \\[0.3em]
+$\mathit{OnLoan} \times \mathit{Disclosure}_{i,t-1}$ & & & $-$0.1157 & $-$0.3043 \\
+ & & & ($-$0.62) & ($-$1.34) \\
+\midrule
+Controls & Yes & Yes & Yes & Yes \\
+\midrule
+Security FE & Yes & Yes & Yes & \\
+Fund FE & Yes & Yes & Yes & \\
+Time FE & Yes & Yes & Yes & \\
+Security $\times$ Time FE & & & & Yes \\
+Fund $\times$ Time FE & & & & Yes \\
+Fund $\times$ Security FE & & & & Yes \\
+\midrule
+$N$ & 42,512 & 42,522 & 42,512 & 39,109 \\
+\bottomrule
+\end{tabular}
+}

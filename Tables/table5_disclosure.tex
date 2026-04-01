@@ -1,0 +1,29 @@
+{\footnotesize
+\begin{tabular}{l*{5}{c}}
+\toprule
+ & \multicolumn{4}{c}{Active Funds} & Passive Funds \\
+\cmidrule(lr){2-5} \cmidrule(lr){6-6}
+ & (1) & (2) & (3) & (4) & (5) \\
+\midrule
+$\mathit{OnLoan}_{i,j,t-1}$ & $-$0.2837$^{***}$ & $-$0.2835$^{***}$ & $-$0.1868 & $-$0.2321 & 0.0208 \\
+ & ($-$2.85) & ($-$2.86) & ($-$1.63) & ($-$0.87) & (0.23) \\[0.3em]
+$\mathit{Disclosure}_{i,t+1}$ & & 0.3633 & 0.3398 & & \\
+ & & (1.25) & (1.17) & & \\[0.3em]
+$\mathit{OnLoan}_{i,j,t-1} \times \mathit{Disclosure}_{i,t+1}$ & & & $-$0.8027$^{**}$ & $-$0.8622$^{**}$ & 0.0258 \\
+ & & & ($-$2.68) & ($-$2.22) & (0.28) \\
+\midrule
+Controls & Yes & Yes & Yes & Yes & Yes \\
+\midrule
+Security FE & Yes & Yes & Yes & & \\
+Fund FE & Yes & Yes & Yes & & \\
+Time FE & Yes & Yes & Yes & & \\
+Security $\times$ Time FE & & & & Yes & Yes \\
+Fund $\times$ Time FE & & & & Yes & Yes \\
+Fund $\times$ Security FE & & & & Yes & Yes \\
+\midrule
+Sample & Active & Active & Active & Active & Passive \\
+Adj.\ $R^2$ & 0.3288 & 0.3289 & 0.3291 & 0.8585 & 0.8585 \\
+$N$ & 42,512 & 42,512 & 42,512 & 39,109 & 11,288 \\
+\bottomrule
+\end{tabular}
+}

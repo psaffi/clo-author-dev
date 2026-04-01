@@ -22,11 +22,15 @@
 
 ---
 
-## Getting Started
+## Research Summary
 
-1. Fill in the `[BRACKETED PLACEHOLDERS]` in this file
-2. Run `/discover interview [topic]` to build your research specification
-3. Or run `/new-project [topic]` for the full orchestrated pipeline
+**Question:** Do mutual funds use the equity lending market to acquire information about short-sale demand and trade on it?
+
+**Setting:** German open-end equity mutual funds (320 funds, 36 families, Dec 2014--Dec 2018) using Bundesbank Investment Fund Statistics (IFS) with security-level lending data.
+
+**Key findings:** Active funds reduce positions in stocks they lend by ~0.33 pp when lending increases. The effect is amplified when a mandatory short-position disclosure follows (interaction: -0.80 to -0.86). Passive funds show no reaction (placebo). Information flows most strongly through same-manager fund lending; within-family spillovers exist but are weaker. The effect is stronger in concentrated lending markets.
+
+**Authors:** Greppmair, Jank, Saffi, Sturgess
 
 ---
 
@@ -123,7 +127,8 @@ See `quality.md` for weighted aggregation formula.
 
 | Component | File | Status | Description |
 |-----------|------|--------|-------------|
-| Paper | `Paper/main.tex` | [draft/submitted/R&R] | [Brief description] |
-| Data | `scripts/R/` | [complete/in-progress] | [Analysis description] |
-| Replication | `Replication/` | [not started/ready] | [Deposit status] |
-| Job Market Talk | `Talks/job_market_talk.tex` | -- | [Status] |
+| Paper | `Paper/main.tex` | draft | Securities lending information acquisition — full paper |
+| Data | `Data/` | external | Bundesbank IFS, Datastream, IHS Markit, Morningstar |
+| Tables | `Tables/` | complete | Tables 1-9 (desc stats + regressions) |
+| Replication | `Replication/` | not started | Stata-based analysis |
+| Talks | `Talks/` | not started | -- |

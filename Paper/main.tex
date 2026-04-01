@@ -1,0 +1,185 @@
+% Securities Lending and Information Acquisition
+% Greppmair, Jank, Saffi, and Sturgess
+%
+% Compilation:
+%   cd Paper && TEXINPUTS=../Preambles:$TEXINPUTS xelatex -interaction=nonstopmode main.tex
+%   BIBINPUTS=..:$BIBINPUTS bibtex main
+%   TEXINPUTS=../Preambles:$TEXINPUTS xelatex -interaction=nonstopmode main.tex
+%   TEXINPUTS=../Preambles:$TEXINPUTS xelatex -interaction=nonstopmode main.tex
+
+\input{header}
+
+\begin{document}
+
+\doublespacing
+
+\title{Securities Lending and Information Acquisition\thanks{We thank [acknowledgments]. The views expressed in this paper are those of the authors and do not necessarily reflect the views of the Deutsche Bundesbank or the Eurosystem.}}
+
+\author{
+Stefan Greppmair\thanks{Deutsche Bundesbank. Email: stefan.greppmair@bundesbank.de.} \and
+Steffen Jank\thanks{Deutsche Bundesbank. Email: steffen.jank@bundesbank.de.} \and
+Pedro A.C. Saffi\thanks{CUNEF Universidad. Email: pedro.saffi@cunef.edu.} \and
+Jason Sturgess\thanks{Queen Mary University of London. Email: j.sturgess@qmul.ac.uk.}
+}
+
+\date{\today}
+
+\maketitle
+
+\begin{abstract}
+\input{sections/abstract}
+\end{abstract}
+
+\bigskip
+\noindent \textit{JEL Classification:} G14, G23, G28
+
+\noindent \textit{Keywords:} Securities lending, short selling, mutual funds, information acquisition, mandatory disclosure
+
+\newpage
+
+%----------------------------------------------------------------------
+% 1. INTRODUCTION
+%----------------------------------------------------------------------
+\section{Introduction}
+\label{sec:introduction}
+\input{sections/introduction}
+
+%----------------------------------------------------------------------
+% 2. INSTITUTIONAL BACKGROUND AND DATA
+%----------------------------------------------------------------------
+\section{Institutional Background and Data}
+\label{sec:institutional}
+\input{sections/data}
+
+%----------------------------------------------------------------------
+% 3. SECURITIES LENDING AND PORTFOLIO DECISIONS
+%----------------------------------------------------------------------
+\section{Securities Lending and Portfolio Decisions}
+\label{sec:main_results}
+\input{sections/main_results}
+
+%----------------------------------------------------------------------
+% 4. INFORMATION ACQUISITION CHANNEL
+%----------------------------------------------------------------------
+\section{Information Acquisition Channel}
+\label{sec:information_channel}
+\input{sections/information_channel}
+
+%----------------------------------------------------------------------
+% 5. INFORMATION CHANNELS WITHIN FUND FAMILIES
+%----------------------------------------------------------------------
+\section{Information Channels within Fund Families}
+\label{sec:family_channels}
+\input{sections/family_channels}
+
+%----------------------------------------------------------------------
+% 6. MARKET STRUCTURE AND INFORMATION ACQUISITION
+%----------------------------------------------------------------------
+\section{Market Structure and Information Acquisition}
+\label{sec:market_structure}
+\input{sections/market_structure}
+
+%----------------------------------------------------------------------
+% 7. CONCLUSION
+%----------------------------------------------------------------------
+\section{Conclusion}
+\label{sec:conclusion}
+\input{sections/conclusion}
+
+%----------------------------------------------------------------------
+% REFERENCES
+%----------------------------------------------------------------------
+\newpage
+\bibliographystyle{plainnat}
+\bibliography{../Bibliography_base}
+
+%----------------------------------------------------------------------
+% TABLES
+%----------------------------------------------------------------------
+\newpage
+
+% --- Descriptive Statistics Tables ---
+\input{../master_supporting_docs/desc_stats_table}
+
+% --- Table 4: Baseline ---
+\clearpage
+\begin{table}[htbp]
+\caption{\textbf{Position Changes and Securities Lending} \endgraf {\footnotesize
+This table reports results from panel regressions of monthly position changes ($PosChange_{i,j,t}$) on lagged securities lending indicators. Columns~(1)--(2) use the full sample; columns~(3)--(5) restrict to active funds. All specifications include security$\times$time, fund$\times$time, and fund$\times$security fixed effects. Standard errors are double-clustered by fund and time. $t$-statistics are reported in parentheses. *, **, *** denote significance at the 10\%, 5\%, and 1\% levels.}}
+\label{table_baseline}
+\begin{center}
+\input{../Tables/table4_baseline}
+\end{center}
+\end{table}
+
+% --- Table 5: Disclosure Interaction ---
+\clearpage
+\begin{table}[htbp]
+\caption{\textbf{Securities Lending and Mandatory Short Position Disclosure} \endgraf {\footnotesize
+This table reports results from panel regressions of monthly position changes on lagged lending interacted with a lead mandatory disclosure indicator. Columns~(1)--(4) use active funds; column~(5) reports the passive fund placebo. Standard errors are double-clustered by fund and time. $t$-statistics are reported in parentheses. *, **, *** denote significance at the 10\%, 5\%, and 1\% levels.}}
+\label{table_disclosure}
+\begin{center}
+\input{../Tables/table5_disclosure}
+\end{center}
+\end{table}
+
+% --- Table 6: Passive Fund Lending ---
+\clearpage
+\begin{table}[htbp]
+\caption{\textbf{Passive Fund Lending as Alternative Measure} \endgraf {\footnotesize
+This table reports results using passive fund lending ($OnLoan_{i,f\text{-}passive,t-1}$) as an exogenous source of variation in lending activity. The dependent variable is position changes for active funds. Standard errors are double-clustered by fund and time. $t$-statistics are reported in parentheses. *, **, *** denote significance at the 10\%, 5\%, and 1\% levels.}}
+\label{table_passive_iv}
+\begin{center}
+\input{../Tables/table6_passive_iv}
+\end{center}
+\end{table}
+
+% --- Table 7: Timing Test ---
+\clearpage
+\begin{table}[htbp]
+\caption{\textbf{Leads and Lags of Mandatory Disclosure} \endgraf {\footnotesize
+This table reports results including leads, contemporaneous, and lagged disclosure indicators and their interactions with lending. The dependent variable is position changes for active funds. Standard errors are double-clustered by fund and time. $t$-statistics are reported in parentheses. *, **, *** denote significance at the 10\%, 5\%, and 1\% levels.}}
+\label{table_timing}
+\begin{center}
+\input{../Tables/table7_timing}
+\end{center}
+\end{table}
+
+% --- Table 8: Family Channels ---
+\clearpage
+\begin{table}[htbp]
+\caption{\textbf{Information Channels within Fund Families} \endgraf {\footnotesize
+This table decomposes lending into same-manager, cross-manager, and family-level channels and reports their interactions with the disclosure indicator. Standard errors are double-clustered by fund and time. $t$-statistics are reported in parentheses. *, **, *** denote significance at the 10\%, 5\%, and 1\% levels.}}
+\label{table_family}
+\begin{center}
+\begin{adjustbox}{width=\textwidth, keepaspectratio}
+\input{../Tables/table8_family_channels}
+\end{adjustbox}
+\end{center}
+\end{table}
+
+% --- Table 9: Market Structure ---
+\clearpage
+\begin{table}[htbp]
+\caption{\textbf{Market Structure and Information Acquisition} \endgraf {\footnotesize
+This table reports triple-interaction results examining how the lending-disclosure effect varies with lending market concentration. All specifications include security$\times$time, fund$\times$time, and fund$\times$security fixed effects. Standard errors are double-clustered by fund and time. $t$-statistics are reported in parentheses. *, **, *** denote significance at the 10\%, 5\%, and 1\% levels.}}
+\label{table_market_structure}
+\begin{center}
+\input{../Tables/table9_market_structure}
+\end{center}
+\end{table}
+
+%----------------------------------------------------------------------
+% APPENDIX
+%----------------------------------------------------------------------
+\newpage
+\appendix
+\section{Variable Definitions}
+\label{app:variables}
+\input{sections/appendix_variables}
+
+\section{Additional Tables}
+\label{app:tables}
+\input{sections/appendix_tables}
+
+\end{document}

@@ -1,0 +1,31 @@
+{\footnotesize
+\begin{tabular}{l*{6}{c}}
+\toprule
+ & \multicolumn{4}{c}{Security + Fund + Time FE} & \multicolumn{2}{c}{Saturated FE} \\
+\cmidrule(lr){2-5} \cmidrule(lr){6-7}
+ & (1) & (2) & (3) & (4) & (5) & (6) \\
+\midrule
+\multicolumn{7}{l}{\textit{Panel A: Lending channel variables}} \\[0.3em]
+$\mathit{OnLoan}_{i,m,t-1}$ (Market) & Yes & Yes & Yes & Yes & Yes & Yes \\[0.3em]
+$\mathit{OnLoan}_{i,m,j,t-1}$ (Same-manager) & & Yes & Yes & Yes & Yes & Yes \\[0.3em]
+$\mathit{OnLoan}_{i,m,k\neq j,t-1}$ (Other-fund) & & & Yes & Yes & Yes & Yes \\[0.3em]
+$\mathit{OnLoan}_{i,\mathit{family},k\neq m,t-1}$ (Family outside mgr.) & & & & Yes & & Yes \\
+\midrule
+\multicolumn{7}{l}{\textit{Panel B: Interactions with $\mathit{Disclosure}_{i,t+1}$}} \\[0.3em]
+Same-manager $\times$ $\mathit{Disclosure}_{i,t+1}$ & & $-$0.7283$^{*}$ & $-$0.8015$^{*}$ & $-$0.9245$^{**}$ & $-$1.5630$^{***}$ & $-$1.9166$^{***}$ \\
+ & & ($-$1.72) & ($-$1.89) & ($-$2.15) & ($-$2.90) & ($-$3.44) \\[0.3em]
+Other-fund $\times$ $\mathit{Disclosure}_{i,t+1}$ & & & $-$0.1957$^{**}$ & $-$0.1957$^{**}$ & $-$0.1204 & $-$0.1133 \\
+ & & & ($-$2.04) & ($-$2.04) & ($-$1.08) & ($-$1.01) \\[0.3em]
+Family outside mgr.\ $\times$ $\mathit{Disclosure}_{i,t+1}$ & & & & $-$0.5180$^{*}$ & & $-$0.7800$^{**}$ \\
+ & & & & ($-$1.75) & & ($-$2.18) \\
+\midrule
+Controls & Yes & Yes & Yes & Yes & Yes & Yes \\
+\midrule
+Security $\times$ Time FE & & & & & Yes & Yes \\
+Fund $\times$ Time FE & & & & & Yes & Yes \\
+Fund $\times$ Security FE & & & & & Yes & Yes \\
+\midrule
+$N$ & 41,145 & 41,145 & 41,145 & 41,145 & 39,675 & 39,675 \\
+\bottomrule
+\end{tabular}
+}

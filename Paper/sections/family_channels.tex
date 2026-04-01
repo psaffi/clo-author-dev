@@ -1,0 +1,19 @@
+% Information Channels within Fund Families
+
+Having established that active funds trade on information acquired through securities lending, we now examine how this information flows within fund families. Fund families typically organize their lending operations through centralized lending desks, creating potential for information spillovers across funds managed by the same family or the same portfolio manager.
+
+\subsection{Decomposing Lending Sources}
+
+We decompose lending into three channels: (i) lending by funds managed by the same portfolio manager ($OnLoan_{i,m,j,t-1}$), (ii) lending by other funds within the same family but managed by a different manager ($OnLoan_{i,m,k\neq j,t-1}$), and (iii) lending by other funds in the family outside the manager's own fund group ($OnLoan_{i,family,k\neq m,t-1}$). This decomposition allows us to distinguish between information acquired directly by a manager through the manager's own funds and information that spills over from other parts of the fund family.
+
+Table~\ref{table_family} presents the results. Columns~(1)--(4) use security, fund, and time fixed effects; columns~(5)--(6) use the saturated three-way fixed effects specification.
+
+\subsection{Same-Manager vs.\ Cross-Manager Lending}
+
+The results reveal a clear hierarchy in the strength of the information channel. The interaction of same-manager fund lending with the disclosure indicator is the strongest and most consistently significant, with coefficients ranging from $-0.7283$ to $-1.9166$ across specifications. This finding is intuitive: portfolio managers who directly observe borrowing demand through their own funds' lending positions have the most direct access to information.
+
+Cross-manager lending within the same family (other funds in the family managed by different portfolio managers) shows a weaker but still detectable effect, with interaction coefficients around $-0.1957$ in the baseline specification. This suggests that information does spill over across managers within fund families, likely through internal communication channels or centralized lending desk reports.
+
+Family-level lending outside the manager's own funds shows intermediate effects ($-0.5180$ to $-0.7800$), confirming that information flows across the family organization but attenuates with organizational distance from the manager.
+
+These results are consistent with the information flowing through the fund family's organizational structure, with the strongest signal coming from a manager's own funds and progressively weaker signals from more organizationally distant sources within the family. The finding complements \citet{Honkanen2025}, who documents family-level spillovers between passive lender funds and active trading funds in U.S.\ data, and \citet{pool2012no}, who show that managers in the same fund family complex share investment ideas.

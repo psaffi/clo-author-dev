@@ -1,0 +1,41 @@
+% Institutional Background and Data
+
+\subsection{German Securities Lending Regulation}
+
+The German securities lending regulatory framework closely mirrors the rules governing U.S.\ mutual funds. Under Sections 200 to 202 of the \textit{Kapitalanlagegesetzbuch} (KAGB), open-end investment funds may engage in securities lending subject to five conditions: (i) the volume of lending transactions with any single counterparty must not exceed 10\% of a fund's net asset value; (ii) funds must receive collateral worth at least 100\% of the loan value; (iii) collateral must be invested in high-quality sovereign debt, short-term money market funds, or repurchase agreements; (iv) funds must receive remuneration reflecting current market conditions; and (v) funds must be able to terminate the loan at any time.
+
+Beyond these statutory requirements, fund families impose additional restrictions on the maximum share of a fund's portfolio that can be lent at any point. Fund families may contract external securities lending agents or operate in-house lending desks to pool their lending business across funds. While some German fund families use third-party lending agents, most employ in-house desks. Securities lending revenues are split between the lending fund and the lending agent, with splits ranging from approximately 50\%--50\% to 95\%--5\% \citep{voicu_prache:2019}.
+
+\subsection{Data Sources}
+
+Our data on German mutual funds comes from the Investment Funds Statistics (IFS) of the Deutsche Bundesbank, covering December 2014 through December 2018. Since September 2009, all investment companies domiciled in Germany must report general fund information and portfolio holdings to the IFS. The data is collected monthly and provides detailed end-of-month, security-by-security information about each fund's portfolio. For each holding, a fund reports the ISIN, the number of shares held, and the nominal and market value of the position.\footnote{\citet{doetsch_flory_schoenberg:2018} provide a detailed description of the IFS data.}
+
+In December 2014, the Bundesbank introduced a major reporting change requiring funds to disclose securities lending activities. For each security in the portfolio, each fund must report the end-of-month nominal value of any position held in a lending transaction.\footnote{Securities lending information is reported at the fund-security level and is therefore constant across all share classes of an individual fund.} This regulatory change provides us with a unique dataset: security-level lending positions for the universe of German investment funds.
+
+We merge the IFS data with Morningstar fund information and aggregate the data to the fund level, matching share class ISINs to the fund identifier provided by Morningstar. For funds with multiple share classes, we calculate fund returns and expenses as asset-weighted averages across share classes. For assets under management, fund flows, and fund holdings, we aggregate across all share classes. Fund age is based on the inception date of the oldest share class.
+
+We combine the IFS mutual fund data with stock information from Datastream, securities lending data from IHS Markit, and the Fama-French risk factors from Kenneth French's data library.\footnote{Following \citet{Ferreira_etal2018JF}, we estimate four-factor alphas using regional factors based on a fund's investment region and use world factors for global funds.}
+
+\subsection{Sample Construction}
+
+The initial IFS-Morningstar matched sample consists of 2,044 funds from 58 fund families. We apply several filters. First, we exclude closed-end funds and alternative investment funds. Second, we remove non-equity, sector, and emerging market funds based on their Morningstar category. Third, we keep only funds older than three years with more than \$10 million in assets under management to mitigate potential incubation biases \citep{evans:2010}. Our final sample consists of 320 German open-end equity mutual funds from 36 fund families.
+
+We further restrict our sample to holdings of securities identified as common or preferred equity, excluding approximately 2\% of observations. We retain only securities traded in the 23 developed markets listed in \citet{fama_french:2012}, excluding another 2\% of observations. We drop observations where the reporting date of the holding in the IFS data exceeds the stock's delisting date in Datastream (less than 0.5\% of observations) and remove fund-month pairs where a fund closes all positions, as we assume the fund is liquidated (less than 0.5\% of observations).
+
+\subsection{Variable Construction}
+
+We use the Bundesbank holdings data to construct two variables capturing the monthly trading activity of a fund. $PosChange_{i,j,t}$ is the percentage change in the number of shares of stock $i$ held by fund $j$ in month $t$, adjusted for stock splits and winsorized at the 99.5\% level. For securities lending activity, we compute $sh\_sec\_lend_{i,j,t}$, defined as the fraction of a particular portfolio position in stock $i$ lent by fund $j$ in month $t$.
+
+At the stock level, we measure aggregate shorting demand as the value of securities on loan scaled by the total market capitalization of that security ($OnLoan$), obtained from IHS Markit.
+
+\subsection{Descriptive Statistics}
+
+Table~\ref{table_desc_stats_investment} presents the breakdown of our sample by investment focus. Of the 320 funds, 267 are actively managed and 53 are passively managed. In terms of investment focus, 92 funds have a global focus, 135 focus on European equities, and 58 focus on German equity, with total assets under management of EUR~156.75 billion.
+
+Table~\ref{table_desc_stats_seclending} provides summary statistics on the securities lending behavior of German investment funds. A third of all funds participate in securities lending during our sample period. The share of securities lenders is considerably lower for actively managed funds (25.47\%) compared to passive funds (69.81\%). Investment funds typically lend only a small fraction of their portfolio, with an average of 3.8\% of AUM on loan. These figures are comparable to U.S.\ mutual fund lending practices documented in \citet{prado_saffi_sturgess:14} and the Investment Company Institute \citep{ICI2014Viewpoints}.
+
+Table~\ref{table_desc_stats} presents descriptive statistics for the monthly fund-security panel data. Panel~A focuses on portfolio characteristics. Portfolios are well-diversified, with a mean (median) portfolio holding of 1.1\% (0.63\%). On average, 2\% of a fund's positions are lent in a given month and 5\% over the past twelve months. The relative frequency with which funds exit a position is 4\%.
+
+Panel~B presents stock-level characteristics. For stocks held by German investment funds, total shorting demand ($OnLoan$) has a mean of 2.52\% and a median of 0.38\% of market capitalization. Average lending supply is 17.89\% and the mean short fee is 75.98 basis points per annum, reflecting the presence of some high-fee ``specials.''
+
+Panels~C and~D report fund-level and fund family-level characteristics, respectively. In our sample, 85\% of observations come from active funds and 15\% from passive funds. Overall, 20\% of observations are from funds that participated in the securities lending market in a given month. At the family level, 17\% of observations come from families with at least one fund participating in lending.

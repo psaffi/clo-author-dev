@@ -1,0 +1,42 @@
+% Appendix A: Variable Definitions
+
+\begin{table}[htbp]
+\caption{\textbf{Variable Definitions}}
+\label{table_variable_definitions}
+\begin{center}
+{\small
+\begin{tabular}{p{4.5cm}p{10cm}}
+\toprule
+\textbf{Variable} & \textbf{Definition} \\
+\midrule
+\multicolumn{2}{l}{\textit{Panel A: Portfolio Variables}} \\
+\midrule
+$PosChange_{i,j,t}$ & Percentage change in the number of shares of stock $i$ held by fund $j$ in month $t$, adjusted for stock splits. Winsorized at the 99.5\% level. \\[0.3em]
+$Position\ Weight_{i,j,t}$ & Market value of holding $i$ by fund $j$ at time $t$ divided by total fund assets under management. \\[0.3em]
+$D(Position\ Exit)_{i,j,t}$ & Indicator equal to one if fund $j$ closes its position in stock $i$ in month $t$. \\[0.3em]
+$D(On\ Loan)_{i,j,t}$ & Indicator equal to one if fund $j$ has lent (part of) its position in stock $i$ in month $t$. \\[0.3em]
+$sh\_sec\_lend_{i,j,t}$ & Fraction of the position in stock $i$ lent by fund $j$ in month $t$. \\[0.3em]
+\midrule
+\multicolumn{2}{l}{\textit{Panel B: Stock Variables}} \\
+\midrule
+$OnLoan_{i,t}$ & Value of stock $i$ on loan divided by total market capitalization. Source: IHS Markit. \\[0.3em]
+$Lending\ Supply_{i,t}$ & Value of stock $i$ available for lending divided by total market capitalization. Source: IHS Markit. \\[0.3em]
+$Short\ Fee_{i,t}$ & Annualized fee (in basis points) for borrowing stock $i$. Source: IHS Markit. \\[0.3em]
+$Disclosure_{i,t}$ & Indicator equal to one if a mandatory public disclosure of a net short position exceeding 0.5\% of shares outstanding is filed for stock $i$ at time $t$. \\[0.3em]
+\midrule
+\multicolumn{2}{l}{\textit{Panel C: Fund Variables}} \\
+\midrule
+$D(Active\ Fund)_j$ & Indicator equal to one if fund $j$ is actively managed. \\[0.3em]
+$D(Fund\ Lends)_{j,t}$ & Indicator equal to one if fund $j$ has at least one position on loan in month $t$. \\[0.3em]
+$Net\ Asset\ Value_{j,t}$ & Total assets under management of fund $j$ in month $t$, aggregated across share classes. \\[0.3em]
+$Fund\ Flows_{j,t}$ & Net fund flows as a percentage of beginning-of-month AUM. \\[0.3em]
+\midrule
+\multicolumn{2}{l}{\textit{Panel D: Fund Family Variables}} \\
+\midrule
+$D(Family\ Lends)_{f,t}$ & Indicator equal to one if at least one fund in family $f$ has a position on loan in month $t$. \\[0.3em]
+$Family\ NAV_{f,t}$ & Total assets under management across all funds in family $f$ in month $t$. \\[0.3em]
+\bottomrule
+\end{tabular}
+}
+\end{center}
+\end{table}
