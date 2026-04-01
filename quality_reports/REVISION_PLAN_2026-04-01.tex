@@ -1,0 +1,551 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{listings}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{titlesec}
+
+\definecolor{critred}{RGB}{180,0,0}
+\definecolor{majblue}{RGB}{0,60,160}
+\definecolor{mingreen}{RGB}{0,120,0}
+\definecolor{codegray}{RGB}{245,245,245}
+\definecolor{darkgray}{RGB}{80,80,80}
+
+\lstset{
+  backgroundcolor=\color{codegray},
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=single,
+  rulecolor=\color{darkgray},
+  commentstyle=\color{darkgray}\itshape,
+  keywordstyle=\color{majblue},
+  stringstyle=\color{mingreen},
+  xleftmargin=1em,
+  xrightmargin=1em,
+  aboveskip=0.5em,
+  belowskip=0.5em
+}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=majblue,
+  urlcolor=majblue,
+  citecolor=darkgray,
+  pdfauthor={Greppmair, Jank, Saffi, Sturgess},
+  pdftitle={Revision Plan -- Securities Lending and Information Acquisition}
+}
+
+\title{\textbf{Revision Plan}\\[0.5em]
+\large Securities Lending and Information Acquisition\\[0.3em]
+\normalsize Greppmair, Jank, Saffi, Sturgess}
+\date{April 2026}
+\author{}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\newpage
+
+% ============================================================
+\section{Overview and Journal Target}
+% ============================================================
+
+\subsection{Current Status}
+
+The paper presents credible, well-identified evidence that active mutual funds exploit private
+information from equity lending operations: lending predicts future position reductions, the
+effect is amplified around mandatory short-position disclosures, passive funds show no reaction
+(clean placebo), and same-manager lending transmits information more strongly than cross-manager
+within-family lending. The identification strategy is sound and the institutional setting is novel
+relative to the US literature.
+
+\textcolor{mingreen}{\textbf{Strong JFQA / Review of Finance submission now.}}
+
+\textcolor{majblue}{\textbf{JF borderline: borderline pending four required additions (Section~3).}}
+
+\subsection{Journal Target Recommendation}
+
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+\textbf{Journal} & \textbf{Readiness} & \textbf{Bottleneck} \\
+\midrule
+JFQA & Ready (post Section~2 fixes) & None blocking \\
+Review of Finance & Ready (post Section~2 fixes) & None blocking \\
+JFE & 2--4 weeks of additional polish & Sections 3.1, 3.2, 4.1 \\
+JF & 2--3 months of additional work & All of Section~3 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Estimated Revision Timeline}
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{2--4 weeks}: JFQA/RFS-ready clean draft. Complete all items in Sections~2 and~4.
+  \item \textbf{2--3 months}: Full JF package. Complete Sections~2, 3, 4, and 5.
+\end{itemize}
+
+% ============================================================
+\section{Completed Fixes (This Draft)}
+% ============================================================
+
+\textcolor{mingreen}{All items below have been applied to the current working draft.}
+
+\subsection*{Equations}
+\begin{itemize}[leftmargin=2em]
+  \item[$\checkmark$] \textcolor{mingreen}{Removed phantom $\beta_3$ term from Eq.~(3): \texttt{OnLoan\_{i,t-1} $\times$ Active\_j} appeared in the equation but had no corresponding column in Table~4.}
+  \item[$\checkmark$] \textcolor{mingreen}{Removed phantom $\beta_2$ term from Eq.~(4): \texttt{OnLoan $\times$ OnLoan\_{i,t-1}} appeared with no table column or discussion; renumbered $\beta_3 \to \beta_2$, $\beta_4 \to \beta_3$, $\beta_5 \to \beta_4$.}
+  \item[$\checkmark$] \textcolor{mingreen}{Applied \texttt{\textbackslash mathit\{\}} to all variable names in math mode: \textit{OnLoan}, \textit{PosChange}, \textit{PosWeight}, \textit{ILLIQ}.}
+  \item[$\checkmark$] \textcolor{mingreen}{Replaced \texttt{eqnarray} with \texttt{align} throughout (standard multi-line equation environment).}
+  \item[$\checkmark$] \textcolor{mingreen}{Eq.~(1): changed \texttt{Y(\ldots)} notation to \texttt{f(\ldots)} to avoid reusing $Y$ as a function name when $Y$ is already the dependent variable.}
+\end{itemize}
+
+\subsection*{Abstract and Introduction}
+\begin{itemize}[leftmargin=2em]
+  \item[$\checkmark$] \textcolor{mingreen}{"demonstrate" $\to$ "show" in abstract (finance convention).}
+  \item[$\checkmark$] \textcolor{mingreen}{"more than doubles" $\to$ "nearly triples" in abstract; matching "nearly triples" in introduction now consistent.}
+  \item[$\checkmark$] \textcolor{mingreen}{Introduction timing: "month $t$" $\to$ "month $t-1$" for lending-to-trading lead.}
+  \item[$\checkmark$] \textcolor{mingreen}{EFP acronym defined at first occurrence in introduction.}
+  \item[$\checkmark$] \textcolor{mingreen}{\texttt{table\_passive\_iv} $\to$ \texttt{table\_passive\_rf} cross-reference corrected.}
+\end{itemize}
+
+\subsection*{Tables}
+\begin{itemize}[leftmargin=2em]
+  \item[$\checkmark$] \textcolor{mingreen}{Table~7 notes: \texttt{\textbackslash scriptsize} $\to$ \texttt{\textbackslash footnotesize}.}
+  \item[$\checkmark$] \textcolor{mingreen}{Table~9: added SE Clustering and Sample rows.}
+  \item[$\checkmark$] \textcolor{mingreen}{Table~9: added note explaining $N$ discrepancy (39,109 vs 39,003).}
+\end{itemize}
+
+\subsection*{Results Section}
+\begin{itemize}[leftmargin=2em]
+  \item[$\checkmark$] \textcolor{mingreen}{Added explanatory sentence for columns~(5)--(7) of Table~5, which were previously unreferenced in the text.}
+\end{itemize}
+
+% ============================================================
+\section{Required Before JF Submission (Priority 1)}
+% ============================================================
+
+\textcolor{critred}{\textbf{These items are blocking for JF. All must be completed and reviewed before submission.}}
+
+\subsection{Formal IV Design}
+
+\textbf{Issue.} The paper asserts that passive fund lending within the same family serves as an
+instrument for active fund lending (endogenous variable: \textit{OnLoan} for active funds).
+However, no formal IV table is presented with first-stage F-statistic, instrument diagnostics,
+or exclusion restriction discussion. Referees at JF will require this.
+
+\textbf{Expected output.} A new or revised table (Table~6 or Internet Appendix) containing:
+\begin{enumerate}[leftmargin=2em]
+  \item First-stage regression with coefficient on passive family lending, F-statistic, and
+        Kleibergen-Paap rk Wald F-statistic.
+  \item Second-stage (2SLS) estimate of position change on instrumented active lending.
+  \item A paragraph in the text discussing the exclusion restriction: passive funds mechanically
+        hold positions determined by their benchmark, not by information signals, so their
+        lending decisions are plausibly exogenous to active fund trading decisions.
+\end{enumerate}
+
+\textbf{Stata code template.} See Section~\ref{sec:stata-iv}.
+
+\subsection{Wald Test for Timing Symmetry}
+
+\textbf{Issue.} The paper reports $\hat{\beta}_{\text{lead}} \approx -0.87$ and
+$\hat{\beta}_{\text{lag}} \approx -0.30$ (t-statistic $-1.34$), and interprets the asymmetry
+as evidence that trading precedes disclosure. However, no formal test of
+$H_0: \beta_{\text{lead}} = \beta_{\text{lag}}$ is reported.
+
+\textbf{Expected output.} Report a $\chi^2$ test (or equivalent Wald test from \texttt{lincom})
+with p-value. A one-sentence footnote suffices if the test rejects at conventional levels.
+If it does not reject, the interpretation of asymmetric timing requires softening.
+
+\textbf{Stata code template.} See Section~\ref{sec:stata-wald}.
+
+\subsection{Return Predictability Table}
+
+\textbf{Issue.} The conclusion states that funds generate gains "at the expense of uninformed
+buyers." This welfare claim is unsubstantiated without return evidence. JF referees will demand
+either (a) a performance table showing risk-adjusted returns for active lenders in the month
+before disclosure, or (b) removal of the welfare language.
+
+\textbf{Expected output.} A table (Internet Appendix or paper body) reporting monthly
+Carhart four-factor alphas for:
+\begin{itemize}[leftmargin=2em]
+  \item Active lending funds vs non-lending active funds in months $[-3, +3]$ relative to
+        disclosure events.
+  \item Preferably as a panel regression with fund $\times$ time fixed effects and a lender
+        indicator interacted with event-month indicators.
+\end{itemize}
+
+\textbf{Stata code template.} See Section~\ref{sec:stata-returns}.
+
+\subsection{Mechanical Autocorrelation Diagnostic}
+
+\textbf{Issue.} When a fund reduces its position (sell), it mechanically holds fewer shares
+available to lend, so \textit{OnLoan} mechanically declines in the same or subsequent month.
+This creates a spurious positive correlation between lagged lending and position changes that
+could bias the coefficient of interest. The paper does not address this threat.
+
+\textbf{Expected output.}
+\begin{enumerate}[leftmargin=2em]
+  \item A robustness row in an existing table excluding lending-termination months (months where
+        $\mathit{OnLoan}_{t-1} > 0$ and $\mathit{OnLoan}_t = 0$).
+  \item A Wooldridge test for serial correlation in residuals (\texttt{xtserial}), reported in a
+        footnote or robustness table.
+\end{enumerate}
+
+\textbf{Stata code template.} See Section~\ref{sec:stata-ar}.
+
+\subsection{Remove ``We Plan to \ldots in the Revision'' Language}
+
+\textcolor{critred}{\textbf{Critical: blocks submission at any journal.}}
+
+Three locations contain author notes that were not removed before this review:
+
+\begin{enumerate}[leftmargin=2em]
+  \item \texttt{empirical\_strategy.tex}, line 42
+  \item \texttt{empirical\_strategy.tex}, line 54
+  \item \texttt{information\_channel.tex}, footnote, line 17
+\end{enumerate}
+
+Each must be either (a) deleted, or (b) converted to completed-task language (e.g., "We
+address this in Section~X" or "Robustness results are reported in Table~X"). No draft with
+placeholder author notes should be submitted to any journal.
+
+% ============================================================
+\section{High Priority (Priority 2) --- JFQA/RFS Standard}
+% ============================================================
+
+\textcolor{majblue}{\textbf{These items should be addressed before submitting to any top field journal.}}
+
+\subsection{Add Adj. $R^2$ to Tables 6, 8, and 9}
+
+Finance panel regressions report Adjusted $R^2$ by field convention. Tables~6, 8, and~9 currently omit it. This requires a Stata re-run adding \texttt{estadd scalar r2\_a = e(r2\_a)} after each \texttt{reghdfe} command.
+
+\subsection{Welfare Language in Conclusion}
+
+The sentence "generating gains for their investors at the expense of uninformed buyers" in the
+conclusion makes a strong welfare claim that is not supported by performance evidence in the
+paper. Resolution options:
+
+\begin{enumerate}[leftmargin=2em, label=(\alph*)]
+  \item Add the return predictability table (Section~3.3) — preferred.
+  \item Replace with hedged language: "consistent with funds extracting rents from lending
+        counterparties" or similar.
+  \item Remove entirely.
+\end{enumerate}
+
+\subsection{Weaken ``Consistent Only With'' Language}
+
+\texttt{empirical\_strategy.tex}, line~52 currently reads "consistent only with active
+information acquisition." The word "only" is too strong — no formal exclusion test rules
+out all alternative mechanisms. Replace with "most consistent with" or "difficult to reconcile
+with alternatives other than."
+
+\subsection{Missing Citations}
+
+\begin{enumerate}[leftmargin=2em]
+  \item \textbf{Blocher \& Ringgenberg (2023, JFE).} Short interest predicts returns. Directly
+        relevant to the return predictability mechanism; a referee will notice its absence.
+  \item \textbf{Massa, Qian, Shi, \& Zhang (2015, JF).} Mutual fund managers and information
+        acquisition through institutional networks. Closest analogue to the family-spillover
+        channel.
+\end{enumerate}
+
+\subsection{Fix Descriptive Tables}
+
+\begin{enumerate}[leftmargin=2em]
+  \item Replace \texttt{\textbackslash hline} with \texttt{\textbackslash midrule} in Tables~1--3.
+        The paper uses \texttt{booktabs} for regression tables; descriptive tables should be
+        consistent.
+  \item Unify panel label style: Table~3 uses \texttt{\textbackslash textbf\{\}}, Tables~8--9
+        use \texttt{\textbackslash textit\{\}}. Standardize to \texttt{\textbackslash textit\{\}}
+        throughout.
+\end{enumerate}
+
+\subsection{Standardize Table Notes Location}
+
+Currently, tables~4, 6, and~7 have notes embedded in their \texttt{.tex} files, while
+tables~5, 8, and~9 have notes in \texttt{main.tex}. Move all notes to their respective
+\texttt{.tex} files for maintainability and consistency.
+
+% ============================================================
+\section{Suggested Analyses for Stronger Paper}
+% ============================================================
+
+\textcolor{darkgray}{Advisory: these additions would strengthen the paper but are not blocking
+for JFQA/RFS submission.}
+
+\subsection{Event-Study Figure}
+
+Plot average position changes for active lenders vs.\ non-lenders in months $[-6, +6]$
+relative to the mandatory disclosure event. This is the single highest-impact presentation
+improvement: a well-executed event study figure conveys the paper's main result visually and
+is now standard at JF and JFE.
+
+\subsection{Short-Seller Identity Heterogeneity}
+
+If borrower identity is available in the Bundesbank IFS data or through IHS Markit, test
+whether funds respond more strongly to lending when the borrower is a historically accurate
+short seller (measured by subsequent price declines). This would substantially strengthen the
+information-acquisition mechanism story.
+
+\subsection{SFTR Post-Period Comparison}
+
+The Securities Financing Transactions Regulation (SFTR) was implemented in 2020 and increased
+transparency in the lending market. A before/after comparison around SFTR implementation
+serves as an additional falsification test: if funds exploit private lending information, the
+effect should weaken post-SFTR when that information becomes more public.
+
+\subsection{Multiple Testing Corrections}
+
+Table~9 reports several triple-interaction coefficients. At JF, referees routinely request
+Romano-Wolf multiple testing corrections for tables with many simultaneous hypotheses. Apply
+\texttt{rwolf} (Romano \& Wolf 2005) to the Table~9 interactions.
+
+% ============================================================
+\section{Stata Code Suggestions}
+% ============================================================
+
+\textbf{Note:} All code below is a template requiring adaptation to actual variable names,
+dataset structure, and fixed-effect specification in use. Variable names (\texttt{onloan\_active},
+\texttt{poschange}, etc.) are illustrative placeholders.
+
+\subsection{Formal IV First Stage}\label{sec:stata-iv}
+
+\begin{lstlisting}[language={}]
+* ============================================================
+* Table 6 - Formal IV: Passive Family Lending as Instrument
+* Endogenous variable: active fund lending (onloan_active)
+* Instrument: passive fund lending within same fund family
+* ============================================================
+
+* --- First Stage ---
+reghdfe onloan_active onloan_passive_family ///
+    log_aum fund_age expense_ratio turnover ///
+    , absorb(securityid#date fundid#date fundid#securityid) ///
+    cluster(fundid date)
+
+estadd scalar Fstat = e(F)
+estadd scalar r2_a = e(r2_a)
+
+* Kleibergen-Paap rk Wald F-statistic (instrument strength)
+test onloan_passive_family
+estadd scalar Fstat_excl = r(F)
+
+* Rule of thumb: Fstat_excl > 10 (Stock-Yogo); > 104 for 5% max IV bias
+
+* --- Second Stage (2SLS) ---
+* Requires ivreghdfe (ssc install ivreghdfe)
+ivreghdfe poschange (onloan_active = onloan_passive_family) ///
+    log_aum fund_age expense_ratio turnover ///
+    , absorb(securityid#date fundid#date fundid#securityid) ///
+    cluster(fundid date)
+
+estadd scalar r2_a = e(r2_a)
+
+* --- Store and output ---
+esttab using "Tables/table_iv.tex", ///
+    keep(onloan_active onloan_passive_family) ///
+    stats(Fstat_excl N r2_a, ///
+          labels("F-stat (excl. instrument)" "N" "Adj. R-sq")) ///
+    label star(* 0.10 ** 0.05 *** 0.01) ///
+    b(4) t(2) replace
+\end{lstlisting}
+
+\subsection{Wald Test for Timing Symmetry}\label{sec:stata-wald}
+
+\begin{lstlisting}[language={}]
+* ============================================================
+* Wald Test: H0: beta_lead = beta_lag
+* After estimating the disclosure-timing specification (Table 7)
+* ============================================================
+
+* --- Estimate disclosure-timing model ---
+reghdfe poschange ///
+    c.onloan##i.disclosure_lead   ///   interaction: onloan x lead disclosure
+    c.onloan##i.disclosure_contemp ///  interaction: onloan x contemp disclosure
+    c.onloan##i.disclosure_lag    ///   interaction: onloan x lag disclosure
+    log_aum fund_age expense_ratio turnover ///
+    , absorb(securityid#date fundid#date fundid#securityid) ///
+    cluster(fundid date)
+
+* --- Wald test: coefficient on lead = coefficient on lag ---
+* Method 1: lincom (gives estimate of difference + SE + t-stat)
+lincom _b[c.onloan#1.disclosure_lead] - _b[c.onloan#1.disclosure_lag]
+
+* Method 2: test (gives F-statistic and p-value)
+test _b[c.onloan#1.disclosure_lead] = _b[c.onloan#1.disclosure_lag]
+
+* Report: chi2(1), p-value in footnote to Table 7
+* If p < 0.10: "We reject equality of lead and lag coefficients
+*   (chi2(1) = X.XX, p = 0.0XX), consistent with trading preceding disclosure."
+\end{lstlisting}
+
+\subsection{Return Predictability Around Disclosure}\label{sec:stata-returns}
+
+\begin{lstlisting}[language={}]
+* ============================================================
+* Return Predictability: Risk-adjusted returns for lenders
+* around mandatory disclosure events
+* ============================================================
+
+* --- Step 1: Compute Carhart 4-factor alpha ---
+* Merge fund-level monthly returns with factor data (French library)
+* carhart_alpha already computed as rolling 36-month window alpha
+
+* --- Step 2: Define event window relative to disclosure ---
+* event_month = month relative to disclosure (-6 to +6)
+gen event_month = date - disclosure_date  // in months
+
+* Keep [-6, +6] window
+keep if event_month >= -6 & event_month <= 6
+
+* --- Step 3: Panel regression with lender x event-month interactions ---
+* lender_active = 1 if fund lent the stock in month t-1
+reghdfe carhart_alpha ///
+    i.lender_active##i.event_month ///
+    , absorb(securityid fundid) ///
+    cluster(fundid date)
+
+* --- Step 4: Plot coefficients for event-study figure ---
+* coefplot (ssc install coefplot):
+coefplot, ///
+    keep(1.lender_active#*) ///
+    vertical ///
+    yline(0, lpattern(dash)) xline(6.5, lpattern(dash)) ///
+    xtitle("Months relative to disclosure") ///
+    ytitle("Abnormal return (%, monthly)") ///
+    title("Active lenders vs. non-lenders around disclosure") ///
+    saving("Figures/event_study_returns.gph", replace)
+graph export "Figures/event_study_returns.pdf", replace
+\end{lstlisting}
+
+\subsection{Mechanical Autocorrelation Diagnostic}\label{sec:stata-ar}
+
+\begin{lstlisting}[language={}]
+* ============================================================
+* Mechanical Autocorrelation Diagnostic
+* Threat: lending declines mechanically when positions are sold
+* Test: exclude lending-termination months; test AR(1) residuals
+* ============================================================
+
+* --- Step 1: Flag lending-termination months ---
+* Termination = fund lent in t-1 but not in t
+sort fundid securityid date
+by fundid securityid: gen term_month = ///
+    (onloan[_n-1] > 0 & !missing(onloan[_n-1])) & (onloan == 0)
+
+label var term_month "Lending-termination month (mechanical)"
+
+* --- Step 2: Re-estimate baseline excluding termination months ---
+reghdfe poschange onloan ///
+    log_aum fund_age expense_ratio ///
+    if !term_month ///
+    , absorb(securityid#date fundid#date fundid#securityid) ///
+    cluster(fundid date)
+
+estadd scalar r2_a = e(r2_a)
+* Compare to baseline: if coefficient similar, mechanical story not driving results
+
+* --- Step 3: Wooldridge test for serial correlation ---
+* Requires xtserial (ssc install xtserial)
+* Run on baseline specification residuals
+
+reghdfe poschange onloan log_aum fund_age expense_ratio ///
+    , absorb(securityid#date fundid#date fundid#securityid) ///
+    cluster(fundid date) residuals(resid_base)
+
+xtset fundid date
+xtserial resid_base
+* H0: no first-order serial correlation
+* If fail to reject: serial correlation not a concern
+* If reject: report AR(1)-robust standard errors as robustness
+\end{lstlisting}
+
+\subsection{Multiple Testing Corrections (Table 9)}\label{sec:stata-mt}
+
+\begin{lstlisting}[language={}]
+* ============================================================
+* Romano-Wolf Multiple Testing Corrections for Table 9
+* Applies to triple-interaction coefficients
+* Requires: ssc install rwolf
+* ============================================================
+
+* --- Estimate all Table 9 specifications and store ---
+* (run each reghdfe specification and store in e() or matrix)
+
+* --- Apply Romano-Wolf correction ---
+* rwolf syntax: rwolf (models...), reps(B) seed(S) [onesided]
+* Note: rwolf requires eststo-stored models
+
+eststo m1: reghdfe poschange c.onloan##i.active##i.hhi_high ///
+    [controls], absorb(...) cluster(fundid date)
+
+eststo m2: reghdfe poschange c.onloan##i.active##i.hhi_mid ///
+    [controls], absorb(...) cluster(fundid date)
+
+* Romano-Wolf correction across stored models
+rwolf (m1: onloan active onloan#active#hhi_high) ///
+      (m2: onloan active onloan#active#hhi_mid)  ///
+    , reps(500) seed(42)
+
+* Report: original p-values and Romano-Wolf adjusted p-values
+* in footnote or table panel
+\end{lstlisting}
+
+% ============================================================
+\section{Quality Score Summary}
+% ============================================================
+
+\begin{center}
+\begin{longtable}{lllll}
+\toprule
+\textbf{Component} & \textbf{Agent} & \textbf{Pre-Fix} & \textbf{Post-Fix} & \textbf{Status} \\
+\midrule
+\endhead
+Spelling/Grammar/Style & Agent 1 & 88/100 & 88/100 & \textcolor{mingreen}{\textbf{PASS}} \\
+Internal Consistency & Agent 2 & 78/100 & 82/100 & \textcolor{mingreen}{\textbf{PASS}} \\
+Unsupported Claims & Agent 3 & 75/100 & 75/100 & \textcolor{critred}{\textbf{FAIL}} \\
+Mathematics/Equations & Agent 4 & 51/100 & $\sim$80/100 & \textcolor{mingreen}{\textbf{PASS (post-fix)}} \\
+Tables/Documentation & Agent 5 & 75/100 & $\sim$85/100 & \textcolor{majblue}{\textbf{Adj.$R^2$ pending}} \\
+JF Referee & Agent 6 & 60/100 & --- & \textcolor{critred}{\textbf{FAIL for JF}} \\
+& & & & \textcolor{majblue}{\textbf{$\sim$75 for JFQA}} \\
+\midrule
+\textbf{Weighted Aggregate} & & \textbf{$\sim$71} & \textbf{$\sim$80} & \textcolor{majblue}{\textbf{JFQA threshold}} \\
+\bottomrule
+\end{longtable}
+\end{center}
+
+\noindent\textbf{Weight schema} (renormalized; code/lit/data not yet scored):\\[0.3em]
+Manuscript polish: 15\% $\cdot$ Consistency: 15\% $\cdot$ Claims: 20\% $\cdot$
+Equations: 15\% $\cdot$ Tables: 15\% $\cdot$ Referee: 20\%
+
+\vspace{1em}
+\noindent\textcolor{critred}{\textbf{Agent 3 (Unsupported Claims) blocks submission}} until the welfare language
+in the conclusion is resolved (add return evidence or remove claim) and "consistent only with"
+is weakened. These are text edits, not data work.
+
+\vspace{1em}
+\noindent\textbf{Path to JF:}
+\begin{enumerate}[leftmargin=2em]
+  \item Complete Section~3 (IV, Wald test, returns, autocorrelation diagnostic, remove placeholders).
+  \item Complete Section~4 (Adj.~$R^2$, welfare language, missing citations, table fixes).
+  \item Re-run all six review agents. Target aggregate $\geq 85$.
+  \item Submit to JF with full replication package.
+\end{enumerate}
+
+\vspace{1em}
+\noindent\textbf{Path to JFQA/RFS (shorter):}
+\begin{enumerate}[leftmargin=2em]
+  \item Complete Section~2 completed fixes (done).
+  \item Complete Section~4 priority items (2--4 weeks).
+  \item Remove "we plan to" language (Section~3.5, text edit, 1 hour).
+  \item Submit.
+\end{enumerate}
+
+\end{document}
