@@ -105,3 +105,23 @@ Check git log and quality_reports/plans/ for current state.
 ---
 **Context compaction (auto) at 15:55**
 Check git log and quality_reports/plans/ for current state.
+
+
+---
+**2026-04-01 — Multi-section revision in progress**
+
+Changes committed (ae58a6c, b0e6c36, 0ca738a, and current):
+- Table 3 descriptive stats updated from Table_3.xlsx (new variables, corrected median)
+- Tables 5/8/9 restructured: notes moved outside resizebox, captions expanded
+- Honkanen deemphasized throughout (kept in intro comparison para only)
+- Nurisso (2026) mechanism expanded: introduction, empirical_strategy, main_results, information_channel, family_channels, market_structure all updated
+- Table 6 IV language removed from conclusion ("exogenous source" → "alternative measure")
+
+6 review agents launched in parallel (Agents 1-6: style, consistency, claims, math, tables, JF referee). Awaiting completion to consolidate and compile revision plan PDF.
+
+Pending: consolidate agent reports → PRE_SUBMISSION_REVIEW_2026-04-01.md → LaTeX → PDF.
+
+
+---
+**Context compaction (auto) at 19:23**
+Check git log and quality_reports/plans/ for current state.
