@@ -5,18 +5,18 @@
 \cmidrule(lr){2-5} \cmidrule(lr){6-7}
  & (1) & (2) & (3) & (4) & (5) & (6) \\
 \midrule
-\multicolumn{7}{l}{\textit{Panel A: Lending channel variables}} \\[0.3em]
-$\mathit{OnLoan}_{i,m,t-1}$ (Market) & Yes & Yes & Yes & Yes & Yes & Yes \\[0.3em]
-$\mathit{OnLoan}_{i,m,j,t-1}$ (Same-manager) & & Yes & Yes & Yes & Yes & Yes \\[0.3em]
-$\mathit{OnLoan}_{i,m,k\neq j,t-1}$ (Other-fund) & & & Yes & Yes & Yes & Yes \\[0.3em]
-$\mathit{OnLoan}_{i,\mathit{family},k\neq m,t-1}$ (Family outside mgr.) & & & & Yes & & Yes \\
+\multicolumn{7}{l}{\textit{Panel A: Lending channel variables included}} \\[0.3em]
+$\mathit{OnLoan}_{i,t-1}$ (market aggregate) & Yes & Yes & Yes & Yes & Yes & Yes \\[0.3em]
+$\mathit{OnLoan}_{i,m,j,t-1}$ (same-manager funds) & & Yes & Yes & Yes & Yes & Yes \\[0.3em]
+$\mathit{OnLoan}_{i,m,k\neq j,t-1}$ (other funds, same manager) & & & Yes & Yes & Yes & Yes \\[0.3em]
+$\mathit{OnLoan}_{i,f,k\neq m,t-1}$ (family, other managers) & & & & Yes & & Yes \\
 \midrule
 \multicolumn{7}{l}{\textit{Panel B: Interactions with $\mathit{Disclosure}_{i,t+1}$}} \\[0.3em]
 Same-manager $\times$ $\mathit{Disclosure}_{i,t+1}$ & & $-$0.7283$^{*}$ & $-$0.8015$^{*}$ & $-$0.9245$^{**}$ & $-$1.5630$^{***}$ & $-$1.9166$^{***}$ \\
  & & ($-$1.72) & ($-$1.89) & ($-$2.15) & ($-$2.90) & ($-$3.44) \\[0.3em]
 Other-fund $\times$ $\mathit{Disclosure}_{i,t+1}$ & & & $-$0.1957$^{**}$ & $-$0.1957$^{**}$ & $-$0.1204 & $-$0.1133 \\
  & & & ($-$2.04) & ($-$2.04) & ($-$1.08) & ($-$1.01) \\[0.3em]
-Family outside mgr.\ $\times$ $\mathit{Disclosure}_{i,t+1}$ & & & & $-$0.5180$^{*}$ & & $-$0.7800$^{**}$ \\
+Family outside manager $\times$ $\mathit{Disclosure}_{i,t+1}$ & & & & $-$0.5180$^{*}$ & & $-$0.7800$^{**}$ \\
  & & & & ($-$1.75) & & ($-$2.18) \\
 \midrule
 Controls & Yes & Yes & Yes & Yes & Yes & Yes \\
@@ -25,7 +25,12 @@ Security $\times$ Time FE & & & & & Yes & Yes \\
 Fund $\times$ Time FE & & & & & Yes & Yes \\
 Fund $\times$ Security FE & & & & & Yes & Yes \\
 \midrule
+SE Clustering & Fund, Time & Fund, Time & Fund, Time & Fund, Time & Fund, Time & Fund, Time \\
 $N$ & 41,145 & 41,145 & 41,145 & 41,145 & 39,675 & 39,675 \\
 \bottomrule
 \end{tabular}
+}
+\par\smallskip
+{\footnotesize
+\textit{Notes:} The table reports results from panel regressions of $PosChange_{i,j,t}$, the monthly percentage change in fund $j$'s position in stock $i$, examining how lending-based information flows within fund families. The sample is restricted to actively managed funds in the disclosure sample. Lending activity is decomposed into four channels: $\mathit{OnLoan}_{i,t-1}$ is the market-wide aggregate lending of stock $i$; $\mathit{OnLoan}_{i,m,j,t-1}$ is lending of stock $i$ by other funds managed by the \textit{same} portfolio manager as fund $j$; $\mathit{OnLoan}_{i,m,k\neq j,t-1}$ is lending by funds in the same family managed by a \textit{different} portfolio manager; $\mathit{OnLoan}_{i,f,k\neq m,t-1}$ is lending by other funds in the family outside the manager's group. All lending variables are in dollar value divided by market capitalization and standardized. Panel~A indicates which lending variables are included in each specification. Panel~B reports interactions of each lending variable with $\mathit{Disclosure}_{i,t+1}$, equal to one if stock $i$ has a new mandatory public short position disclosure in month $t+1$. Columns~(1)--(4) include separate security, fund, and time fixed effects; columns~(5)--(6) include the full saturated fixed effects. Controls include lagged Amihud illiquidity rank and lagged position weight. Standard errors are double-clustered by fund and time. \textit{t}-statistics in parentheses. *, **, *** denote significance at the 10\%, 5\%, and 1\% levels.
 }

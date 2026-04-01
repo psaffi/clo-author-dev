@@ -15,11 +15,15 @@ $D(\mathit{Lender})_{i,j,t-1}$ & & & & $-$1.9165$^{***}$ & $-$0.0584 \\
 Security $\times$ Time FE & Yes & Yes & Yes & Yes & Yes \\
 Fund $\times$ Time FE & Yes & Yes & Yes & Yes & Yes \\
 Fund $\times$ Security FE & Yes & Yes & Yes & Yes & Yes \\
-SE Clustering & Fund, Time & Fund, Time & Fund, Time & Fund, Time & Fund, Time \\
+SE Clustering & Fund & Fund & Fund & Fund & Fund \\
 \midrule
 Sample & All & All & Active & Active & Active \\
 Adj.\ $R^2$ & 0.2483 & 0.2483 & 0.1713 & 0.1713 & 0.1713 \\
 $N$ & 1,022,668 & 1,022,668 & 757,092 & 757,092 & 757,092 \\
 \bottomrule
 \end{tabular}
+}
+\par\smallskip
+{\footnotesize
+\textit{Notes:} The table reports results from panel regressions of $PosChange_{i,j,t}$, the monthly percentage change in the number of shares of stock $i$ held by fund $j$ at time $t$. $\mathit{OnLoan}_{i,j,t-1}$ is the dollar value of shares lent by fund $j$ in stock $i$ at month $t-1$ divided by the market capitalization of stock $i$, standardized to mean zero and unit standard deviation. $\mathit{Active}_j$ equals one for actively managed funds. $D(\mathit{Lender})_{i,j,t-1}$ equals one if fund $j$ lent any shares of stock $i$ at $t-1$. Controls include the lagged Amihud~(2002) illiquidity percentile rank and the lagged position weight within the fund's portfolio. Observations where fund $j$ is entering position in stock $i$ for the first time are excluded. All specifications include security$\times$time, fund$\times$time, and fund$\times$security fixed effects, absorbing stock-level price signals, fund-level portfolio decisions, and fund-stock fixed preferences, respectively. Standard errors are clustered at the fund level. \textit{t}-statistics in parentheses. *, **, *** denote significance at the 10\%, 5\%, and 1\% levels.
 }

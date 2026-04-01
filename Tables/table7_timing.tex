@@ -1,4 +1,4 @@
-{\small
+{\footnotesize
 \begin{tabular}{l*{4}{c}}
 \toprule
  & (1) & (2) & (3) & (4) \\
@@ -11,11 +11,11 @@ $\mathit{Disclosure}_{i,t}$ & & 0.2958 & 0.3013 & \\
  & & (1.05) & (1.07) & \\[0.3em]
 $\mathit{Disclosure}_{i,t-1}$ & & $-$0.0972 & $-$0.1020 & \\
  & & ($-$0.29) & ($-$0.30) & \\[0.3em]
-$\mathit{OnLoan} \times \mathit{Disclosure}_{i,t+1}$ & & & $-$0.8224$^{**}$ & $-$0.8723$^{**}$ \\
+$\mathit{OnLoan}_{i,j,t-1} \times \mathit{Disclosure}_{i,t+1}$ & & & $-$0.8224$^{**}$ & $-$0.8723$^{**}$ \\
  & & & ($-$2.62) & ($-$2.27) \\[0.3em]
-$\mathit{OnLoan} \times \mathit{Disclosure}_{i,t}$ & & & 0.0353 & 0.3738 \\
+$\mathit{OnLoan}_{i,j,t-1} \times \mathit{Disclosure}_{i,t}$ & & & 0.0353 & 0.3738 \\
  & & & (0.08) & (0.55) \\[0.3em]
-$\mathit{OnLoan} \times \mathit{Disclosure}_{i,t-1}$ & & & $-$0.1157 & $-$0.3043 \\
+$\mathit{OnLoan}_{i,j,t-1} \times \mathit{Disclosure}_{i,t-1}$ & & & $-$0.1157 & $-$0.3043 \\
  & & & ($-$0.62) & ($-$1.34) \\
 \midrule
 Controls & Yes & Yes & Yes & Yes \\
@@ -27,7 +27,13 @@ Security $\times$ Time FE & & & & Yes \\
 Fund $\times$ Time FE & & & & Yes \\
 Fund $\times$ Security FE & & & & Yes \\
 \midrule
+SE Clustering & Fund, Time & Fund, Time & Fund, Time & Fund, Time \\
+Sample & Active & Active & Active & Active \\
 $N$ & 42,512 & 42,522 & 42,512 & 39,109 \\
 \bottomrule
 \end{tabular}
+}
+\par\smallskip
+{\footnotesize
+\textit{Notes:} The table reports results from panel regressions of $PosChange_{i,j,t}$, the monthly percentage change in fund $j$'s position in stock $i$, including leads, contemporaneous, and lagged mandatory disclosure indicators interacted with lending activity. The sample is restricted to actively managed funds in the disclosure sample. $\mathit{OnLoan}_{i,j,t-1}$ is the dollar value of shares lent by fund $j$ in stock $i$ at month $t-1$ divided by the market capitalization of stock $i$, standardized to mean zero and unit standard deviation. $\mathit{Disclosure}_{i,t+1}$ equals one if stock $i$ has a new mandatory public short position disclosure in month $t+1$ (no prior disclosure in the preceding six months); $\mathit{Disclosure}_{i,t}$ equals one if the disclosure occurs in the current month; $\mathit{Disclosure}_{i,t-1}$ equals one if the disclosure occurred in the prior month. Under the information acquisition hypothesis, only the lead disclosure interaction ($\mathit{OnLoan} \times \mathit{Disclosure}_{i,t+1}$) should be significant, reflecting funds' ability to trade in anticipation of public disclosure. Controls include lagged Amihud illiquidity rank and lagged position weight. Standard errors are double-clustered by fund and time. \textit{t}-statistics in parentheses. *, **, *** denote significance at the 10\%, 5\%, and 1\% levels.
 }

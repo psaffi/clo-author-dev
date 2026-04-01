@@ -1,0 +1,52 @@
+% Empirical Strategy
+
+\subsection{Empirical strategy} \label{subsec:empirical-strategy}
+
+We examine how short selling demand signals in the equity lending market affect mutual fund portfolio allocation. Consider the following general characterization of mutual fund holdings, where $Y_{i,j,t}$ is the holding for fund $j$ in stock $i$ at time $t$:
+\begin{eqnarray} \label{eq:equil_allocation}
+Y_{i,j,t} & = & Y\left(Y_{i,j},\; Y_{i,t},\; Y_{j,t},\; \phi_{i,j,t} \right)
+\end{eqnarray}
+Mutual fund holdings are an equilibrium outcome determined by four components: a fund-stock time-invariant component $Y_{i,j}$, which reflects a fund's persistent preferences for a stock based on investment philosophy or style; a common stock-time component $Y_{i,t}$, which captures signals common to all investors including aggregate short selling demand; a fund-time component $Y_{j,t}$, which captures fund-level investment style, portfolio breadth, and governance; and a fund-stock-time specific component $\phi_{i,j,t}$.
+
+Our focus is on the fund-stock-time component $\phi_{i,j,t}$: how fund $j$'s specific demand for stock $i$ changes when the fund receives a \textit{private} short selling demand signal $OnLoan_{i,j,t-1}$ through the equity lending market. For example, consider a fund active in the lending market that lends $OnLoan_{i,j,t-1}$ shares of stock $i$ at time $t-1$. The amount on loan reveals information about short selling demand that is not contained in public signals---because public signals are absorbed by $Y_{i,t}$---but is observed privately by the fund through its lending contracts.\footnote{A measure of aggregate short selling demand is available to institutional investors. Brokers often provide data on special lists and borrowing costs to institutional investors with substantial trading volume. Markit reciprocally shares lending market information with participating clients.}
+
+In a saturated fixed effect estimation, we estimate changes in fund-stock portfolio holdings as a function of a fund's lending activity, including fund-stock, stock-time, and fund-time fixed effects ($\alpha_{i,j}$, $\alpha_{i,t}$, and $\alpha_{j,t}$). These fixed effects absorb public stock-time price signals common to all investors, fund-time information and investment decisions common to all stocks in a fund's portfolio, and fund-stock time-invariant preferences.
+
+To identify the effect of the private signal $OnLoan_{i,j,t-1}$ on portfolio allocation, we estimate:
+\begin{eqnarray} \label{eq:baseline}
+Y_{i,j,t} & = & \alpha_{i,j} + \alpha_{i,t} + \alpha_{j,t} + \beta_{1}\, OnLoan_{i,j,t-1} + \mathbf{X}_{i,j,t-1}'\,\gamma_1 + \epsilon_{i,j,t},
+\end{eqnarray}
+
+\noindent where $Y_{i,j,t}$ is the monthly percentage change in the number of shares of stock $i$ held by fund $j$ at time $t$ ($PosChange_{i,j,t}$). $OnLoan_{i,j,t-1}$ is the dollar value of shares lent by fund $j$ in stock $i$ at $t-1$ divided by the market capitalization of stock $i$, measuring the fund's exposure to private short selling demand. $\mathbf{X}_{i,j,t-1}$ includes lagged position weight ($PosWeight_{i,j,t-1}$) and an Amihud~\citeyearpar{amihud:02} illiquidity rank ($ILLIQ_{i,j,t-1}$). Standard errors are clustered at the fund level. Variable definitions are provided in Appendix~\ref{app:variables}.
+
+The coefficient $\beta_1$ identifies the effect of the private signal: we predict $\beta_1 < 0$ if lenders act on the information embedded in short selling demand. The counterfactual is funds that hold the same stock but do not participate in lending and therefore receive no private signal. Any effect of aggregate short selling demand $OnLoan_{i,t}$ is absorbed by $\alpha_{i,t}$.
+
+\subsection{Active vs.\ passive funds} \label{subsec:active-passive}
+
+A critical identification test is whether the trading response to lending signals is confined to active fund managers who can freely adjust portfolios, rather than passive fund managers who must track a benchmark index. We estimate:
+\begin{eqnarray} \label{eq:baseline_active}
+Y_{i,j,t} & = & \alpha_{i,j} + \alpha_{i,t} + \alpha_{j,t} + \beta_{1}\, OnLoan_{i,j,t-1} + \beta_{2}\, OnLoan_{i,j,t-1} \times Active_{j} \nonumber \\
+& & + \beta_{3}\, OnLoan_{i,t-1} \times Active_{j} + \mathbf{X}_{i,j,t-1}'\,\gamma_1 + \epsilon_{i,j,t},
+\end{eqnarray}
+
+\noindent where $Active_j$ equals one for actively managed funds. The coefficient $\beta_1$ captures the response for passive funds, which we expect to be zero since passive funds cannot trade on information. $\beta_2$ captures the incremental response for active funds relative to active non-lenders; our information acquisition hypothesis predicts $\beta_2 < 0$. The coefficient $\beta_3$ captures the response of active funds to aggregate short selling demand $OnLoan_{i,t-1}$.\footnote{Aggregate short selling demand $OnLoan_{i,t-1}$ is the sum of $OnLoan_{i,j,t-1}$ across all funds at time $t-1$.}
+
+\subsection{Identification via mandatory short position disclosures} \label{subsec:identification-disclosure}
+
+Our primary identification strategy exploits mandatory public disclosures of large short positions. Under Article~9 of Regulation (EU) No~236/2012, any net short position exceeding 0.5\% of market capitalization must be publicly disclosed the following trading day. Above 0.5\%, further disclosures are required at 0.1\% increments. The regulation applies to all investors irrespective of origin, with standardized disclosure across EU countries.\footnote{The regulation and relevant data are described in detail in \citet{jank_smajlbegovic:2015}, \citet{jones_reed_waller:16}, and \citet{jank_roling_smajlbegovic2020}. Publicly disclosed short positions are more frequently observable for large and liquid stocks \citep{jank_roling_smajlbegovic2020}, consistent with our sample.}
+
+We focus on \textit{new} disclosure events---stocks that have not had any public short position disclosure in the preceding six months. This restriction isolates the most informative public signals: follow-on disclosures for stocks with known short positions are less informative \citep{jones_reed_waller:16}. These disclosed positions predict negative returns \citep{jank_smajlbegovic:2015} but do not fully reveal the private structure of shorting demand below the disclosure threshold \citep{jank_roling_smajlbegovic2020}.
+
+\textbf{Selection concerns.} The main identification challenge is that lending activity may be endogenous to portfolio decisions. A fund might reduce a position precisely because it can no longer lend shares (liquidity-driven), or might lend more shares in positions it plans to reduce (selection). The three-way fixed effects structure directly addresses this concern: $\alpha_{i,t}$ absorbs stock-time common shocks including aggregate borrowing demand, $\alpha_{j,t}$ absorbs fund-level portfolio rebalancing, and $\alpha_{i,j}$ absorbs time-invariant fund-stock preferences. The identifying variation is the idiosyncratic deviation of a fund's lending in a specific stock at a specific time, relative to what is predicted by these three layers of fixed effects.
+
+We further address endogeneity by exploiting the timing of mandatory disclosures. If the lending signal is informative, active lenders should reduce positions \textit{before} a large short position is publicly disclosed---not after. We test this using the following regression:
+\begin{eqnarray} \label{eq:big-shorts}
+Y_{i,j,t} & = & a_0 + \beta_1\, OnLoan_{i,j,t-1} + \beta_2\, OnLoan_{i,j,t-1} \times OnLoan_{i,t-1} \nonumber\\
+& & + \beta_3\, \mathit{Disclosure}_{i,t+1} \times OnLoan_{i,j,t-1} + \beta_4\, \mathit{Disclosure}_{i,t} \times OnLoan_{i,j,t-1} \nonumber\\
+& & + \beta_5\, \mathit{Disclosure}_{i,t-1} \times OnLoan_{i,j,t-1} + \mathbf{X}_{i,j,t-1}'\,\gamma + \alpha_{i,t} + \alpha_{j,t} + \alpha_{i,j} + \epsilon_{i,j,t},
+\end{eqnarray}
+where $\mathit{Disclosure}_{i,t}$ is an indicator equal to one if there is a \textit{new} public short position disclosure in month $t$ for stock $i$. $\mathit{Disclosure}_{i,t+1}$ and $\mathit{Disclosure}_{i,t-1}$ are the lead and lag of this indicator, respectively. The key coefficient is $\beta_3$: lenders reduce positions in the month \textit{before} disclosure. We expect $\beta_4 = 0$ and $\beta_5 = 0$ because lenders' information advantage evaporates once positions are publicly disclosed.
+
+This timing pattern---pre-announcement selling by lenders but not by non-lenders---is inconsistent with mechanical explanations (e.g., recall of lent shares to vote) and is consistent only with active information acquisition through the lending process. Standard errors are double-clustered at the fund and time level for all disclosure-sample specifications.
+
+\textbf{Contribution.} Our approach builds on and extends the existing literature. \citet{EvansFerreiraPrado2017} document that securities lending generates revenues for mutual funds but do not examine whether lending conveys information. \citet{Honkanen2025} finds that passive lenders in U.S.\ fund families help connected active funds trade in advance of negative price movements, consistent with family-level information spillovers. We extend this evidence in three ways. First, we use European regulatory data to directly link individual lending contracts to portfolio decisions, isolating the fund-level private signal rather than inferring it from family-level patterns. Second, we use mandatory disclosure events as an external validation of the information channel, distinguishing private signal acquisition from public signal processing. Third, by examining market structure---lending concentration, active agent counts, and portfolio breadth---we identify conditions under which the information value of the lending signal is highest. These market structure results are novel to the literature.
